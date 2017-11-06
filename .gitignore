@@ -1,1 +1,8 @@
 # C# file ignore
+
+.vs
+*.config
+*.pdb
+obj
+*.csproj
+	
