@@ -28,9 +28,16 @@ namespace DogManage_HCMC.DAL
             string strque = "";
             return DataConnection.Inst.ExcuteQuery(strque).Rows.Count > 0;
         }
-        public DataTable getListAccount()
+        public List<Account> getListAccount()
         {
-            return DataConnection.Inst.ExcuteQuery("");
+            List<Account> list = new List<Account>();
+            string query = "select * from Account";
+            foreach (DataRow item in DataConnection.Inst.ExcuteQuery(query).Rows)
+            {
+                Account account = new Account(item);
+                list.Add(account);
+            }
+            return list;
         }
         public Account getAccountByuserName(string username)
         {

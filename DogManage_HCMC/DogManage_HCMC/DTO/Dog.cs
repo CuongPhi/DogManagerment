@@ -43,5 +43,9 @@ namespace DogManage_HCMC.DTO
         public bool IsDetroy { get => isDetroy; set => isDetroy = value; }
         public bool IsInject { get => isInject; set => isInject = value; }
         internal typeDog TypeDog { get => typeDog; set => typeDog = value; }
+        public long getFine()
+        {
+            return 1;
+        }
     }
 }

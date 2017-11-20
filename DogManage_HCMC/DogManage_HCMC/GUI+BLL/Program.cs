@@ -1,4 +1,5 @@
 ﻿using DogManage_HCMC.DAL;
+using DogManage_HCMC.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,6 @@ namespace DogManage_HCMC
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
 
-           
         }
     }
 }

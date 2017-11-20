@@ -51,7 +51,7 @@
             this.btnDelAcc = new System.Windows.Forms.Button();
             this.btnEditAcc = new System.Windows.Forms.Button();
             this.tbFindAcc = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvAllAcc = new System.Windows.Forms.DataGridView();
             this.tabPageMenu = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -75,7 +75,7 @@
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvAllAcc)).BeginInit();
             this.tabPageMenu.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -100,7 +100,7 @@
             this.tabpAccount.AutoScroll = true;
             this.tabpAccount.Controls.Add(this.panel2);
             this.tabpAccount.Controls.Add(this.panel1);
-            this.tabpAccount.Controls.Add(this.dataGridView1);
+            this.tabpAccount.Controls.Add(this.dtgvAllAcc);
             this.tabpAccount.Location = new System.Drawing.Point(4, 22);
             this.tabpAccount.Name = "tabpAccount";
             this.tabpAccount.Padding = new System.Windows.Forms.Padding(3);
@@ -334,13 +334,13 @@
             this.tbFindAcc.Text = "Tìm kiếm";
             this.tbFindAcc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // dataGridView1
+            // dtgvAllAcc
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 44);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(480, 338);
-            this.dataGridView1.TabIndex = 0;
+            this.dtgvAllAcc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvAllAcc.Location = new System.Drawing.Point(6, 44);
+            this.dtgvAllAcc.Name = "dtgvAllAcc";
+            this.dtgvAllAcc.Size = new System.Drawing.Size(480, 338);
+            this.dtgvAllAcc.TabIndex = 0;
             // 
             // tabPageMenu
             // 
@@ -500,7 +500,7 @@
             this.panel9.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvAllAcc)).EndInit();
             this.tabPageMenu.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
@@ -518,7 +518,7 @@
 
         private System.Windows.Forms.TabControl tabp;
         private System.Windows.Forms.TabPage tabpAccount;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgvAllAcc;
         private System.Windows.Forms.TabPage tabPageMenu;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnViewListAcc;

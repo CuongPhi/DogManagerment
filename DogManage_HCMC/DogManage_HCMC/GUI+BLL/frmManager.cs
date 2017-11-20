@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DogManage_HCMC.DAL;
+using DogManage_HCMC.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,6 +47,10 @@ namespace DogManage_HCMC
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        public void showAllAccount()
+        {
+            dtgvAllAcc.DataSource = AccountConnection.Inst.getListAccount();
         }
     }
 }

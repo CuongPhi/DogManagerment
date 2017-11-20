@@ -8,32 +8,32 @@ using System.Threading.Tasks;
 
 namespace DogManage_HCMC.DAL
 {
-    public class ManagerConnection
+    public class SoftWareUserConnection
     {
-        private static ManagerConnection inst;
+        private static SoftWareUserConnection inst;
 
-        public static ManagerConnection Inst
+        public static SoftWareUserConnection Inst
         {
             get
             {
                 if (inst == null)
-                    inst = new ManagerConnection();
+                    inst = new SoftWareUserConnection();
                 return inst;
             }
 
         }
-        private ManagerConnection() { }
+        private SoftWareUserConnection() { }
 
-        public DataTable getListManager()
+        public DataTable getListStaff()
         {
             return DataConnection.Inst.ExcuteQuery("");
         }
-        public Manager getManagerByuserName(string username)
+        public SoftWareUser getUserByUserName(string username)
         {
             DataTable account = DataConnection.Inst.ExcuteQuery("Select * from account where userName = '" + username + "'");
             foreach (DataRow item in account.Rows)
             {
-                return new Manager(item);
+                return new SoftWareUser(item);
             }
             return null;
         }

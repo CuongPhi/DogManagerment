@@ -24,9 +24,6 @@ namespace DogManage_HCMC.DTO
         public string BankAccountNum { get => bankAccountNum; set => bankAccountNum = value; }
         public ulong Salary { get => salary; set => salary = value; }
         public Account Account { get => account; set => account = value; }
-        
-        public abstract void getMyInfo();
-        public abstract void setMyInfo( Account account, PersonInfo info, string bankAccountNum, ulong salary);
-        public abstract void login(string usernam, string pass);
+
     }
 }
