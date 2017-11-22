@@ -8,22 +8,21 @@ namespace DogManage_HCMC.DTO
 {
     public abstract class Person
     {
-        public Person()
-        {
-            account = new Account();
-            info = new PersonInfo();
-            bankAccountNum = "";
-            salary = 0;
-        }
+        public Person()      {   }
         private Account account;
         private  PersonInfo info;
-        private string bankAccountNum;
-        private ulong salary;
+        private int bankAccountNum;
+        private int salary;
+        private int medicalCode;
+        private int _FringeBenegit;
+        private DateTime dateJoin;
 
         public  PersonInfo Info { get => info; set => info = value; }
-        public string BankAccountNum { get => bankAccountNum; set => bankAccountNum = value; }
-        public ulong Salary { get => salary; set => salary = value; }
+        public int BankAccountNum { get => bankAccountNum; set => bankAccountNum = value; }
+        public int Salary { get => salary; set => salary = value; }
         public Account Account { get => account; set => account = value; }
-
+        public int MedicalCode { get => medicalCode; set => medicalCode = value; }
+        public int FringeBenegit { get => _FringeBenegit; set => _FringeBenegit = value; }
+        public DateTime DateJoin { get => dateJoin; set => dateJoin = value; }
     }
 }

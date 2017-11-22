@@ -10,8 +10,7 @@ namespace DogManage_HCMC.DAL
 {
     public class DataConnection
     {
-        private string stringConnection = "";
-
+        string strconnection = "Data Source=.;Initial Catalog=DOG_MANAGEMENT_HCMC;Integrated Security=True";
         private static DataConnection inst;
         private DataConnection() { }
         public static DataConnection Inst
@@ -23,12 +22,7 @@ namespace DogManage_HCMC.DAL
                 return inst;
             }
         }
-        private SqlConnection openConnection(SqlConnection conn)
-        {
-            if (conn.State == ConnectionState.Closed || conn.State == ConnectionState.Broken)
-                conn.Open();
-            return conn;
-        }
+  
         void SplitParaString(string query, SqlCommand command, object[] parameter)
         {
             string[] listPara = query.Split(' ');
@@ -47,9 +41,11 @@ namespace DogManage_HCMC.DAL
         public DataTable ExcuteQuery(string stringQuery, object[] parameter = null)
         {
             DataTable data = new DataTable();
-            using (SqlConnection conn = new SqlConnection(stringConnection))
+            using (SqlConnection conn = new SqlConnection(strconnection))
             {
-                SqlCommand command = new SqlCommand(stringQuery, openConnection(conn));
+               
+                conn.Open();
+                SqlCommand command = new SqlCommand(stringQuery, conn);
                 if (parameter != null)
                     SplitParaString(stringQuery, command, parameter);
                 SqlDataAdapter adaper = new SqlDataAdapter(command);
@@ -61,9 +57,11 @@ namespace DogManage_HCMC.DAL
         public int ExcuteNoneQuery(string stringQuery, object[] parameter = null)
         {
             int data = 0;
-            using (SqlConnection conn = new SqlConnection(stringConnection))
+            using (SqlConnection conn = new SqlConnection(strconnection))
             {
-                SqlCommand command = new SqlCommand(stringQuery, openConnection(conn));
+                if (conn.State == ConnectionState.Closed || conn.State == ConnectionState.Broken)
+                    conn.Open();
+                SqlCommand command = new SqlCommand(stringQuery, conn);
                 if (parameter != null)
                     SplitParaString(stringQuery, command, parameter);
                 data = command.ExecuteNonQuery();
@@ -74,9 +72,11 @@ namespace DogManage_HCMC.DAL
         public object ExcuteScalar(string stringQuery, object[] parameter = null)
         {
             object data = 0;
-            using (SqlConnection conn = new SqlConnection(stringConnection))
+            using (SqlConnection conn = new SqlConnection(strconnection))
             {
-                SqlCommand command = new SqlCommand(stringQuery, openConnection(conn));
+                if (conn.State == ConnectionState.Closed || conn.State == ConnectionState.Broken)
+                    conn.Open();
+                SqlCommand command = new SqlCommand(stringQuery,conn);
                 if (parameter != null)
                     SplitParaString(stringQuery, command, parameter);
                 data = command.ExecuteScalar();

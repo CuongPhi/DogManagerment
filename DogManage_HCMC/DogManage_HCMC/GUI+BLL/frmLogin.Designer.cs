@@ -40,9 +40,9 @@
             this.lbIntroSoft = new System.Windows.Forms.Label();
             this.lbver = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.llbForgotPass = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.pnUsername.SuspendLayout();
             this.pnPassw.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -110,7 +110,6 @@
             this.tbPassword.Location = new System.Drawing.Point(97, 6);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(198, 23);
             this.tbPassword.TabIndex = 2;
             this.tbPassword.Text = "admin";
@@ -173,6 +172,18 @@
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // panel2
+            // 
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.pnUsername);
+            this.panel2.Controls.Add(this.pnPassw);
+            this.panel2.Location = new System.Drawing.Point(3, 1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(318, 89);
+            this.panel2.TabIndex = 7;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
             // llbForgotPass
             // 
             this.llbForgotPass.AutoSize = true;
@@ -198,18 +209,6 @@
             this.label1.Text = "ĐĂNG NHẬP HỆ THỐNG";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.pnUsername);
-            this.panel2.Controls.Add(this.pnPassw);
-            this.panel2.Location = new System.Drawing.Point(3, 1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(318, 89);
-            this.panel2.TabIndex = 7;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnLogin;
@@ -229,6 +228,7 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý chó-Đăng nhập ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
             this.pnUsername.ResumeLayout(false);
             this.pnUsername.PerformLayout();
             this.pnPassw.ResumeLayout(false);

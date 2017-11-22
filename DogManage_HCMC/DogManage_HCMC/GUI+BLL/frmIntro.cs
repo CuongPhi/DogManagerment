@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DogManage_HCMC.DTO;
+using DogManage_HCMC.GUI_BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +14,28 @@ namespace DogManage_HCMC
 {
     public partial class frmIntro : Form
     {
-        public frmIntro()
+        Account _acc = new Account();
+        public frmIntro(Account acc)
         {
+            _acc = acc;
             InitializeComponent();
             
         }
-
+        private void setTypeAccount(typeAccount type)
+        {
+            if(typeAccount.Manager == type)
+            {
+                quảnLýToolStripMenuItem.Enabled = true;
+            }
+            else if(typeAccount.Staff == type)
+            {
+                nhânViênToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                kếToánToolStripMenuItem.Enabled = true;
+            }
+        }
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn muốn đăng xuất ??", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -76,7 +94,25 @@ namespace DogManage_HCMC
 
         private void frmIntro_Load(object sender, EventArgs e)
         {
+            nhânViênToolStripMenuItem.Enabled = quảnLýToolStripMenuItem.Enabled =
+                kếToánToolStripMenuItem.Enabled = false;
+            setTypeAccount(_acc.Type);
+        }
 
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmChangePassW frmfcp = new frmChangePassW(_acc);
+            frmfcp.ShowDialog();
+            if(frmfcp.IsChangedPass)
+            {
+                this.Close();
+            }
+        }
+
+        private void đổiTTCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmChangePersonInfor frmCPI = new frmChangePersonInfor(_acc);
+            frmCPI.ShowDialog();
         }
     }
 }

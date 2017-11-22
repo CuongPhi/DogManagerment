@@ -83,7 +83,7 @@
             this.nhânViênToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("nhânViênToolStripMenuItem.Image")));
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
             this.nhânViênToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.nhânViênToolStripMenuItem.Text = "Nhân viên";
             this.nhânViênToolStripMenuItem.Click += new System.EventHandler(this.nhânViênToolStripMenuItem_Click);
             // 
@@ -92,7 +92,7 @@
             this.kếToánToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kếToánToolStripMenuItem.Image")));
             this.kếToánToolStripMenuItem.Name = "kếToánToolStripMenuItem";
             this.kếToánToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.kếToánToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.kếToánToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.kếToánToolStripMenuItem.Text = "Kế toán";
             this.kếToánToolStripMenuItem.Click += new System.EventHandler(this.kếToánToolStripMenuItem_Click);
             // 
@@ -100,7 +100,7 @@
             // 
             this.đăngXuấtToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("đăngXuấtToolStripMenuItem.Image")));
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất        Esc";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -123,6 +123,7 @@
             this.đổiMậtKhẩuToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
             this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
+            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
             // 
             // đổiTTCáNhânToolStripMenuItem
             // 
@@ -131,13 +132,14 @@
             this.đổiTTCáNhânToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
             this.đổiTTCáNhânToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.đổiTTCáNhânToolStripMenuItem.Text = "Đổi TT Cá nhân";
+            this.đổiTTCáNhânToolStripMenuItem.Click += new System.EventHandler(this.đổiTTCáNhânToolStripMenuItem_Click);
             // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("trợGiúpToolStripMenuItem.Image")));
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
             this.trợGiúpToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
             this.trợGiúpToolStripMenuItem.Click += new System.EventHandler(this.trợGiúpToolStripMenuItem_Click);
             // 

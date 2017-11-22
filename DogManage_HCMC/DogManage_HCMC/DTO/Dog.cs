@@ -9,37 +9,39 @@ namespace DogManage_HCMC.DTO
 {
     enum typeDog
     {
-
+        type1 =1,
+        type2= 2,
+        type3= 3
     }
     public  class Dog
     {
         private typeDog typeDog;
-        private string idOwner;
-        private string idDog;
-        private float weight;
-        private DateTime? dateIn;
-        private DateTime? dateOut;
+        private int idOwner;
+        private int idDog;
+        private int weight;
+        private DateTime dateIn;
+        private DateTime dateOut;
         private bool isDetroy;
         private bool isInject;
 
         public Dog(DataRow row)
         {
             this.typeDog = (typeDog)row["typeDog"];
-            this.IdOwner = row["idOwner"].ToString();
-            this.idDog = row["idDog"].ToString();
+            this.IdOwner = (int)row["idOwner"];
+            this.idDog = (int)row["idDog"];
             this.isDetroy = (bool)row["isDetroy"];
             this.isInject = (bool)row["isInject"];
-            this.weight = (float)Convert.ToDouble(row["weight"].ToString());
-            this.DateIn = (DateTime?)row["dateIn"];
-            this.dateOut = new DateTime?((DateTime)dateIn);
+            this.weight = (int)row["weight"];
+            this.DateIn = (DateTime)row["dateIn"];
+            this.dateOut = new DateTime().AddDays(3);
             
         }
 
-        public string IdOwner { get => idOwner; set => idOwner = value; }
-        public string IdDog { get => idDog; set => idDog = value; }
-        public float Weight { get => weight; set => weight = value; }
-        public DateTime? DateIn { get => dateIn; set => dateIn = value; }
-        public DateTime? DateOut { get => dateOut; set => dateOut = value; }
+        public int IdOwner { get => idOwner; set => idOwner = value; }
+        public int IdDog { get => idDog; set => idDog = value; }
+        public int Weight { get => weight; set => weight = value; }
+        public DateTime DateIn { get => dateIn; set => dateIn = value; }
+        public DateTime DateOut { get => dateOut; set => dateOut = value; }
         public bool IsDetroy { get => isDetroy; set => isDetroy = value; }
         public bool IsInject { get => isInject; set => isInject = value; }
         internal typeDog TypeDog { get => typeDog; set => typeDog = value; }
