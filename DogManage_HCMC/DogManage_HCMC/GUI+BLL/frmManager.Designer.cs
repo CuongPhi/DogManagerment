@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
             this.tabp = new System.Windows.Forms.TabControl();
             this.tabpAccount = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,7 +52,6 @@
             this.btnAddAcc = new System.Windows.Forms.Button();
             this.btnDelAcc = new System.Windows.Forms.Button();
             this.btnEditAcc = new System.Windows.Forms.Button();
-            this.tbFindAcc = new System.Windows.Forms.TextBox();
             this.dtgvAllAcc = new System.Windows.Forms.DataGridView();
             this.tabPageMenu = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -63,9 +64,10 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbFindUser = new System.Windows.Forms.TextBox();
-            this.lbLoginning = new System.Windows.Forms.Label();
-            this.lbDisplayName = new System.Windows.Forms.Label();
-            this.btnPrev = new System.Windows.Forms.Button();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.cbbFindAcc = new System.Windows.Forms.ComboBox();
             this.tabp.SuspendLayout();
             this.tabpAccount.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -89,33 +91,34 @@
             // 
             this.tabp.Controls.Add(this.tabpAccount);
             this.tabp.Controls.Add(this.tabPageMenu);
-            this.tabp.Location = new System.Drawing.Point(12, 12);
+            this.tabp.Location = new System.Drawing.Point(12, 41);
             this.tabp.Name = "tabp";
             this.tabp.SelectedIndex = 0;
-            this.tabp.Size = new System.Drawing.Size(864, 414);
+            this.tabp.Size = new System.Drawing.Size(864, 456);
             this.tabp.TabIndex = 0;
             // 
             // tabpAccount
             // 
             this.tabpAccount.AutoScroll = true;
+            this.tabpAccount.BackColor = System.Drawing.Color.Lavender;
+            this.tabpAccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabpAccount.Controls.Add(this.panel2);
             this.tabpAccount.Controls.Add(this.panel1);
             this.tabpAccount.Controls.Add(this.dtgvAllAcc);
             this.tabpAccount.Location = new System.Drawing.Point(4, 22);
             this.tabpAccount.Name = "tabpAccount";
             this.tabpAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpAccount.Size = new System.Drawing.Size(856, 388);
+            this.tabpAccount.Size = new System.Drawing.Size(856, 430);
             this.tabpAccount.TabIndex = 0;
             this.tabpAccount.Text = "Tài khoản";
-            this.tabpAccount.UseVisualStyleBackColor = true;
             this.tabpAccount.Click += new System.EventHandler(this.tabpAccount_Click);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.grbChoosingAcc);
-            this.panel2.Location = new System.Drawing.Point(489, 44);
+            this.panel2.Location = new System.Drawing.Point(485, 71);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(364, 341);
+            this.panel2.Size = new System.Drawing.Size(363, 355);
             this.panel2.TabIndex = 9;
             // 
             // grbChoosingAcc
@@ -126,10 +129,10 @@
             this.grbChoosingAcc.Controls.Add(this.panel7);
             this.grbChoosingAcc.Controls.Add(this.panel8);
             this.grbChoosingAcc.Controls.Add(this.panel9);
-            this.grbChoosingAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.grbChoosingAcc.Location = new System.Drawing.Point(3, 3);
+            this.grbChoosingAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.grbChoosingAcc.Location = new System.Drawing.Point(5, 6);
             this.grbChoosingAcc.Name = "grbChoosingAcc";
-            this.grbChoosingAcc.Size = new System.Drawing.Size(361, 335);
+            this.grbChoosingAcc.Size = new System.Drawing.Size(361, 345);
             this.grbChoosingAcc.TabIndex = 8;
             this.grbChoosingAcc.TabStop = false;
             this.grbChoosingAcc.Text = "Tài khoản đang chọn";
@@ -278,68 +281,65 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbbFindAcc);
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.btnViewListAcc);
             this.panel1.Controls.Add(this.btnAddAcc);
             this.panel1.Controls.Add(this.btnDelAcc);
             this.panel1.Controls.Add(this.btnEditAcc);
-            this.panel1.Controls.Add(this.tbFindAcc);
-            this.panel1.Location = new System.Drawing.Point(6, 3);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(480, 39);
+            this.panel1.Size = new System.Drawing.Size(480, 58);
             this.panel1.TabIndex = 3;
             // 
             // btnViewListAcc
             // 
-            this.btnViewListAcc.Location = new System.Drawing.Point(232, 7);
+            this.btnViewListAcc.Image = ((System.Drawing.Image)(resources.GetObject("btnViewListAcc.Image")));
+            this.btnViewListAcc.Location = new System.Drawing.Point(202, 6);
             this.btnViewListAcc.Name = "btnViewListAcc";
-            this.btnViewListAcc.Size = new System.Drawing.Size(81, 29);
+            this.btnViewListAcc.Size = new System.Drawing.Size(60, 50);
             this.btnViewListAcc.TabIndex = 6;
-            this.btnViewListAcc.Text = "Xem D.Sách";
+            this.toolTip1.SetToolTip(this.btnViewListAcc, "Tạo mới danh sách");
             this.btnViewListAcc.UseVisualStyleBackColor = true;
             // 
             // btnAddAcc
             // 
-            this.btnAddAcc.Location = new System.Drawing.Point(3, 7);
+            this.btnAddAcc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddAcc.Image = ((System.Drawing.Image)(resources.GetObject("btnAddAcc.Image")));
+            this.btnAddAcc.Location = new System.Drawing.Point(4, 6);
             this.btnAddAcc.Name = "btnAddAcc";
-            this.btnAddAcc.Size = new System.Drawing.Size(73, 29);
+            this.btnAddAcc.Size = new System.Drawing.Size(60, 50);
             this.btnAddAcc.TabIndex = 5;
-            this.btnAddAcc.Text = "Thêm TK";
+            this.toolTip1.SetToolTip(this.btnAddAcc, "Thêm tài khoản");
             this.btnAddAcc.UseVisualStyleBackColor = true;
             // 
             // btnDelAcc
             // 
-            this.btnDelAcc.Location = new System.Drawing.Point(161, 7);
+            this.btnDelAcc.Image = ((System.Drawing.Image)(resources.GetObject("btnDelAcc.Image")));
+            this.btnDelAcc.Location = new System.Drawing.Point(136, 6);
             this.btnDelAcc.Name = "btnDelAcc";
-            this.btnDelAcc.Size = new System.Drawing.Size(65, 29);
+            this.btnDelAcc.Size = new System.Drawing.Size(60, 50);
             this.btnDelAcc.TabIndex = 4;
-            this.btnDelAcc.Text = "Xóa TK";
+            this.toolTip1.SetToolTip(this.btnDelAcc, "Xóa tài khoản");
             this.btnDelAcc.UseVisualStyleBackColor = true;
             // 
             // btnEditAcc
             // 
-            this.btnEditAcc.Location = new System.Drawing.Point(82, 6);
+            this.btnEditAcc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditAcc.Image = ((System.Drawing.Image)(resources.GetObject("btnEditAcc.Image")));
+            this.btnEditAcc.Location = new System.Drawing.Point(70, 6);
             this.btnEditAcc.Name = "btnEditAcc";
-            this.btnEditAcc.Size = new System.Drawing.Size(73, 29);
+            this.btnEditAcc.Size = new System.Drawing.Size(60, 50);
             this.btnEditAcc.TabIndex = 3;
-            this.btnEditAcc.Text = "Sửa TT TK";
+            this.toolTip1.SetToolTip(this.btnEditAcc, "Chỉnh sửa tài khoản");
             this.btnEditAcc.UseVisualStyleBackColor = true;
-            // 
-            // tbFindAcc
-            // 
-            this.tbFindAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbFindAcc.Location = new System.Drawing.Point(319, 9);
-            this.tbFindAcc.Name = "tbFindAcc";
-            this.tbFindAcc.Size = new System.Drawing.Size(158, 21);
-            this.tbFindAcc.TabIndex = 2;
-            this.tbFindAcc.Text = "Tìm kiếm";
-            this.tbFindAcc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dtgvAllAcc
             // 
             this.dtgvAllAcc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvAllAcc.Location = new System.Drawing.Point(6, 44);
+            this.dtgvAllAcc.Location = new System.Drawing.Point(-1, 65);
             this.dtgvAllAcc.Name = "dtgvAllAcc";
-            this.dtgvAllAcc.Size = new System.Drawing.Size(480, 338);
+            this.dtgvAllAcc.Size = new System.Drawing.Size(480, 361);
             this.dtgvAllAcc.TabIndex = 0;
             // 
             // tabPageMenu
@@ -351,7 +351,7 @@
             this.tabPageMenu.Location = new System.Drawing.Point(4, 22);
             this.tabPageMenu.Name = "tabPageMenu";
             this.tabPageMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMenu.Size = new System.Drawing.Size(856, 388);
+            this.tabPageMenu.Size = new System.Drawing.Size(856, 400);
             this.tabPageMenu.TabIndex = 1;
             this.tabPageMenu.Text = "Thống kê";
             this.tabPageMenu.UseVisualStyleBackColor = true;
@@ -443,46 +443,53 @@
             this.tbFindUser.Text = "Tìm kiếm";
             this.tbFindUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lbLoginning
+            // btnReturn
             // 
-            this.lbLoginning.AutoSize = true;
-            this.lbLoginning.Location = new System.Drawing.Point(597, 430);
-            this.lbLoginning.Name = "lbLoginning";
-            this.lbLoginning.Size = new System.Drawing.Size(91, 13);
-            this.lbLoginning.TabIndex = 1;
-            this.lbLoginning.Text = "Đang đăng nhập:";
+            this.btnReturn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReturn.BackgroundImage")));
+            this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnReturn.Location = new System.Drawing.Point(12, 3);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(50, 32);
+            this.btnReturn.TabIndex = 10;
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // lbDisplayName
+            // button3
             // 
-            this.lbDisplayName.AutoSize = true;
-            this.lbDisplayName.Location = new System.Drawing.Point(694, 430);
-            this.lbDisplayName.Name = "lbDisplayName";
-            this.lbDisplayName.Size = new System.Drawing.Size(38, 13);
-            this.lbDisplayName.TabIndex = 2;
-            this.lbDisplayName.Text = "Cường";
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button3.Location = new System.Drawing.Point(424, 20);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(35, 27);
+            this.button3.TabIndex = 7;
+            this.button3.UseVisualStyleBackColor = false;
             // 
-            // btnPrev
+            // cbbFindAcc
             // 
-            this.btnPrev.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnPrev.Location = new System.Drawing.Point(16, 425);
-            this.btnPrev.Name = "btnPrev";
-            this.btnPrev.Size = new System.Drawing.Size(82, 23);
-            this.btnPrev.TabIndex = 5;
-            this.btnPrev.Text = "Quay lại";
-            this.btnPrev.UseVisualStyleBackColor = true;
-            this.btnPrev.Click += new System.EventHandler(this.button2_Click);
+            this.cbbFindAcc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbFindAcc.FormattingEnabled = true;
+            this.cbbFindAcc.Location = new System.Drawing.Point(275, 22);
+            this.cbbFindAcc.Name = "cbbFindAcc";
+            this.cbbFindAcc.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbbFindAcc.Size = new System.Drawing.Size(149, 24);
+            this.cbbFindAcc.TabIndex = 8;
+            this.cbbFindAcc.Text = "Tìm kiếm";
+            this.cbbFindAcc.TextChanged += new System.EventHandler(this.cbbFindAcc_TextChanged);
+            this.cbbFindAcc.MouseDown += new System.Windows.Forms.MouseEventHandler(this.cbbFindAcc_MouseDown);
+            this.cbbFindAcc.MouseLeave += new System.EventHandler(this.cbbFindAcc_MouseLeave);
             // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnPrev;
-            this.ClientSize = new System.Drawing.Size(881, 452);
-            this.Controls.Add(this.btnPrev);
-            this.Controls.Add(this.lbDisplayName);
-            this.Controls.Add(this.lbLoginning);
+            this.CancelButton = this.btnReturn;
+            this.ClientSize = new System.Drawing.Size(876, 509);
+            this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.tabp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmManager";
             this.Text = "Chức năng-Quản lý";
@@ -499,7 +506,6 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAllAcc)).EndInit();
             this.tabPageMenu.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -510,7 +516,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -525,9 +530,6 @@
         private System.Windows.Forms.Button btnAddAcc;
         private System.Windows.Forms.Button btnDelAcc;
         private System.Windows.Forms.Button btnEditAcc;
-        private System.Windows.Forms.TextBox tbFindAcc;
-        private System.Windows.Forms.Label lbLoginning;
-        private System.Windows.Forms.Label lbDisplayName;
         private System.Windows.Forms.GroupBox grbChoosingAcc;
         private System.Windows.Forms.Button btnResetPassW;
         private System.Windows.Forms.Panel panel6;
@@ -552,7 +554,10 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.Button btnPrev;
         private System.Windows.Forms.TextBox tbFindUser;
+        private System.Windows.Forms.Button btnReturn;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox cbbFindAcc;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

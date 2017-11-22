@@ -68,5 +68,15 @@ namespace DogManage_HCMC
         {
 
         }
+
+        private void kếToánToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmIntro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
