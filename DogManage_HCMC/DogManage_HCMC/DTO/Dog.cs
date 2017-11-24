@@ -15,21 +15,19 @@ namespace DogManage_HCMC.DTO
     }
     public  class Dog
     {
-        private typeDog typeDog;
-        private int idOwner;
-        private int idDog;
-        private int weight;
-        private DateTime dateIn;
-        private DateTime dateOut;
-        private bool isDetroy;
-        private bool isInject;
+            private typeDog typeDog;
+            private int FoodMoney;
+            private int idDog;
+            private int weight;
+            private DateTime dateIn;
+            private DateTime dateOut;
+            private bool isInject;
 
         public Dog(DataRow row)
         {
             this.typeDog = (typeDog)row["typeDog"];
-            this.IdOwner = (int)row["idOwner"];
+            this.FoodMoney = (int)row["FoodMoney"];
             this.idDog = (int)row["idDog"];
-            this.isDetroy = (bool)row["isDetroy"];
             this.isInject = (bool)row["isInject"];
             this.weight = (int)row["weight"];
             this.DateIn = (DateTime)row["dateIn"];
@@ -37,13 +35,12 @@ namespace DogManage_HCMC.DTO
             
         }
 
-        public int IdOwner { get => idOwner; set => idOwner = value; }
         public int IdDog { get => idDog; set => idDog = value; }
         public int Weight { get => weight; set => weight = value; }
         public DateTime DateIn { get => dateIn; set => dateIn = value; }
         public DateTime DateOut { get => dateOut; set => dateOut = value; }
-        public bool IsDetroy { get => isDetroy; set => isDetroy = value; }
         public bool IsInject { get => isInject; set => isInject = value; }
+        public int FoodMoney1 { get => FoodMoney; set => FoodMoney = value; }
         internal typeDog TypeDog { get => typeDog; set => typeDog = value; }
         public long getFine()
         {

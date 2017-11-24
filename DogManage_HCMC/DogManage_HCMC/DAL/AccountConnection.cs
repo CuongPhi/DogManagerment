@@ -33,13 +33,15 @@ namespace DogManage_HCMC.DAL
         {
             List<Account> list = new List<Account>();
             string query = "select * from Account";
-            foreach (DataRow item in DataConnection.Inst.ExcuteQuery(query).Rows)
+            DataTable dt = DataConnection.Inst.ExcuteQuery(query);       
+            foreach (DataRow item in dt.Rows)
             {
-                Account account = new Account(item);
-                list.Add(account);
+                  list.Add(new Account(item));
+                
             }
             return list;
         }
+
         public Account getAccountByuserName(string username)
         {
             string que = string.Format("select * from account where username= '{0}'", username);
@@ -72,5 +74,6 @@ namespace DogManage_HCMC.DAL
             }
             return null;
         }
+
     }
 }

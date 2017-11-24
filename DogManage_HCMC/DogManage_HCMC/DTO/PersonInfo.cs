@@ -14,7 +14,6 @@ namespace DogManage_HCMC.DTO
         private string eMail;
         private int phoneNum;
         private int idCardNumber; // CMND
-        private int age;
         private int idPerson;
         private string name;
         private bool gender;
@@ -25,18 +24,34 @@ namespace DogManage_HCMC.DTO
         }
         public PersonInfo(DataRow r)
         {
-            this.Address = r["address"].ToString();
-            this.EMail = r["Email"].ToString();
-            this.PhoneNum = (int)r["PhoneNum"];
-            this.Age = (int)r["Age"];
-            this.IdPerson = (int)r["IDperson"];
-            this.Gender = (bool)r["Gender"];
-            this.BirthDay = (DateTime)r["Birhday"];
-            this.Name = r["Name"].ToString();
-            this.IdCardNumber = (int)r["IDcardNum"];
+            try
+            {
+                this.PhoneNum = (int)r["PhoneNum"];
+                this.Address = StandardString(r["address"].ToString());
+                this.Gender = (bool)r["Gender"];
+                this.BirthDay = (DateTime)r["Birhday"];
+                this.IdPerson = (int)r["IDperson"];
+                this.Name = StandardString(r["Name"].ToString());
+                this.IdCardNumber = (int)r["IDcardNum"];
+                this.EMail = r["Email"].ToString().Trim().ToLower();          
+            }
+            catch
+            { }
+          
+        }
+     
+        public string StandardString(string strInput)
+        {
+            strInput = strInput.Trim().ToLower();
+            while (strInput.Contains("  "))
+                strInput = strInput.Replace("  ", " ");
+            string strResult = "";
+            string[] arrResult = strInput.Split(' ');
+            foreach (string item in arrResult)
+                strResult += item.Substring(0, 1).ToUpper() + item.Substring(1) + " ";
+            return strResult.TrimEnd();
         }
         public string Name { get => name; set => name = value; }
-        public int Age { get => age; set => age = value; }
         public bool Gender { get => gender; set => gender = value; }
         public string Address { get => address; set => address = value; } 
         public DateTime BirthDay { get => birthDay; set => birthDay = value; }

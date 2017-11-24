@@ -35,15 +35,12 @@ namespace DogManage_HCMC.DAL
                     i++;
                 }
             }
-
-
         }
         public DataTable ExcuteQuery(string stringQuery, object[] parameter = null)
         {
             DataTable data = new DataTable();
             using (SqlConnection conn = new SqlConnection(strconnection))
             {
-               
                 conn.Open();
                 SqlCommand command = new SqlCommand(stringQuery, conn);
                 if (parameter != null)

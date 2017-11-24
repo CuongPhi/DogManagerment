@@ -33,7 +33,7 @@ namespace DogManage_HCMC
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (isLogin())
+            if (isLogin() && true)
             {
                 Account acc = AccountConnection.Inst.getAccountByuserName(tbUserName.Text);
                 frmIntro frmIntro = new frmIntro(acc);

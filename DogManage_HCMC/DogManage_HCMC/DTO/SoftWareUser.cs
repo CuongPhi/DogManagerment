@@ -23,6 +23,7 @@ namespace DogManage_HCMC.DTO
             this.MedicalCode = (int)r["MedicalCOde"];
             this.FringeBenegit = (int)r["FringeBenefit"];
             this.DateJoin = (DateTime)r["DateJoin"];
+            this.Account = new Account(r);
            
         }
 

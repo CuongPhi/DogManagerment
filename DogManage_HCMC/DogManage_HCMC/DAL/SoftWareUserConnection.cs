@@ -37,5 +37,16 @@ namespace DogManage_HCMC.DAL
             }
             return null;
         }
+        public List< SoftWareUser > getAllUser()
+        {
+            DataTable account = DataConnection.Inst.ExcuteQuery("Select * from personinfo pi, userapp p, account a where pi.idperson = p.idperson and a.username=  p.account");
+            List<SoftWareUser> l = new List<SoftWareUser>();
+            foreach (DataRow item in account.Rows)
+            {
+                l.Add(new SoftWareUser(item));
+
+            }
+            return l;
+        }
     }
 }
