@@ -33,21 +33,23 @@
             this.tabp = new System.Windows.Forms.TabControl();
             this.tabpAccount = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEditAll = new System.Windows.Forms.Button();
             this.btnViewMore = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.grbChoosingUser = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.grbAccount = new System.Windows.Forms.GroupBox();
+            this.cbTypeAcc = new System.Windows.Forms.ComboBox();
+            this.button11 = new System.Windows.Forms.Button();
             this.btnChangTypeAcc = new System.Windows.Forms.Button();
             this.btnReserPassW = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tbUserName = new System.Windows.Forms.TextBox();
-            this.tbTypeAcc = new System.Windows.Forms.TextBox();
             this.grbSalary = new System.Windows.Forms.GroupBox();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.nmrudfringe = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -102,6 +104,10 @@
             this.tbFindUser = new System.Windows.Forms.TextBox();
             this.btnReturn = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabp.SuspendLayout();
             this.tabpAccount.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -122,6 +128,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabp
@@ -153,23 +160,52 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.btnSave);
+            this.panel6.Controls.Add(this.btnEditAll);
             this.panel6.Controls.Add(this.btnViewMore);
             this.panel6.Location = new System.Drawing.Point(488, 2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(411, 56);
             this.panel6.TabIndex = 10;
             // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.Location = new System.Drawing.Point(299, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(50, 50);
+            this.btnSave.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.btnSave, "Lưu tất cả ");
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnEditAll
+            // 
+            this.btnEditAll.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnEditAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditAll.BackgroundImage")));
+            this.btnEditAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEditAll.Location = new System.Drawing.Point(355, 3);
+            this.btnEditAll.Name = "btnEditAll";
+            this.btnEditAll.Size = new System.Drawing.Size(50, 50);
+            this.btnEditAll.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.btnEditAll, "Chỉnh sửa tất cả thông tin");
+            this.btnEditAll.UseVisualStyleBackColor = false;
+            this.btnEditAll.Click += new System.EventHandler(this.btnEditAll_Click);
+            // 
             // btnViewMore
             // 
             this.btnViewMore.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnViewMore.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnViewMore.BackgroundImage")));
-            this.btnViewMore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnViewMore.Location = new System.Drawing.Point(4, 3);
+            this.btnViewMore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnViewMore.Location = new System.Drawing.Point(7, 3);
             this.btnViewMore.Name = "btnViewMore";
-            this.btnViewMore.Size = new System.Drawing.Size(60, 50);
+            this.btnViewMore.Size = new System.Drawing.Size(50, 50);
             this.btnViewMore.TabIndex = 9;
             this.toolTip1.SetToolTip(this.btnViewMore, "Xem đầy đủ thông tin");
             this.btnViewMore.UseVisualStyleBackColor = false;
+            this.btnViewMore.Click += new System.EventHandler(this.btnViewMore_Click);
             // 
             // panel2
             // 
@@ -206,18 +242,44 @@
             // 
             // grbAccount
             // 
+            this.grbAccount.Controls.Add(this.cbTypeAcc);
+            this.grbAccount.Controls.Add(this.button11);
             this.grbAccount.Controls.Add(this.btnChangTypeAcc);
             this.grbAccount.Controls.Add(this.btnReserPassW);
             this.grbAccount.Controls.Add(this.label14);
             this.grbAccount.Controls.Add(this.label15);
             this.grbAccount.Controls.Add(this.tbUserName);
-            this.grbAccount.Controls.Add(this.tbTypeAcc);
             this.grbAccount.Location = new System.Drawing.Point(9, 258);
             this.grbAccount.Name = "grbAccount";
             this.grbAccount.Size = new System.Drawing.Size(393, 82);
             this.grbAccount.TabIndex = 16;
             this.grbAccount.TabStop = false;
             this.grbAccount.Text = "Thông tin đăng nhập";
+            // 
+            // cbTypeAcc
+            // 
+            this.cbTypeAcc.FormattingEnabled = true;
+            this.cbTypeAcc.Items.AddRange(new object[] {
+            "Accountant",
+            "Manager",
+            "Starff"});
+            this.cbTypeAcc.Location = new System.Drawing.Point(109, 51);
+            this.cbTypeAcc.Name = "cbTypeAcc";
+            this.cbTypeAcc.Size = new System.Drawing.Size(95, 21);
+            this.cbTypeAcc.TabIndex = 22;
+            // 
+            // button11
+            // 
+            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button11.Location = new System.Drawing.Point(363, 33);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(24, 23);
+            this.button11.TabIndex = 21;
+            this.button11.Text = "btnEditAccount";
+            this.toolTip1.SetToolTip(this.button11, "Chỉnh sửa dòng này");
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // btnChangTypeAcc
             // 
@@ -228,6 +290,7 @@
             this.btnChangTypeAcc.Text = "Đổi loại tài khoản";
             this.toolTip1.SetToolTip(this.btnChangTypeAcc, "Đổi loại tài khoản cho tài khoản này");
             this.btnChangTypeAcc.UseVisualStyleBackColor = true;
+            this.btnChangTypeAcc.Click += new System.EventHandler(this.btnChangTypeAcc_Click);
             // 
             // btnReserPassW
             // 
@@ -238,6 +301,7 @@
             this.btnReserPassW.Text = "Reset mật khẩu";
             this.toolTip1.SetToolTip(this.btnReserPassW, "Reset lại mật khẩu mặc định cho tài khoản này");
             this.btnReserPassW.UseVisualStyleBackColor = true;
+            this.btnReserPassW.Click += new System.EventHandler(this.btnReserPassW_Click);
             // 
             // label14
             // 
@@ -268,20 +332,10 @@
             this.tbUserName.Size = new System.Drawing.Size(94, 20);
             this.tbUserName.TabIndex = 16;
             // 
-            // tbTypeAcc
-            // 
-            this.tbTypeAcc.Location = new System.Drawing.Point(109, 48);
-            this.tbTypeAcc.Margin = new System.Windows.Forms.Padding(4);
-            this.tbTypeAcc.Name = "tbTypeAcc";
-            this.tbTypeAcc.ReadOnly = true;
-            this.tbTypeAcc.Size = new System.Drawing.Size(95, 20);
-            this.tbTypeAcc.TabIndex = 17;
-            // 
             // grbSalary
             // 
             this.grbSalary.Controls.Add(this.button9);
             this.grbSalary.Controls.Add(this.button8);
-            this.grbSalary.Controls.Add(this.button7);
             this.grbSalary.Controls.Add(this.nmrudfringe);
             this.grbSalary.Controls.Add(this.label7);
             this.grbSalary.Controls.Add(this.label9);
@@ -304,9 +358,10 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(24, 23);
             this.button9.TabIndex = 18;
-            this.button9.Text = "button9";
+            this.button9.Text = "btnEdit7";
             this.toolTip1.SetToolTip(this.button9, "Chỉnh sửa dòng này");
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -316,21 +371,10 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(24, 23);
             this.button8.TabIndex = 20;
-            this.button8.Text = "button8";
+            this.button8.Text = "btnEdit6";
             this.toolTip1.SetToolTip(this.button8, "Chỉnh sửa dòng này");
             this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Location = new System.Drawing.Point(363, 8);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(24, 23);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "button7";
-            this.toolTip1.SetToolTip(this.button7, "Chỉnh sửa dòng này");
-            this.button7.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // nmrudfringe
             // 
@@ -385,6 +429,7 @@
             this.tbBankNum.Location = new System.Drawing.Point(109, 11);
             this.tbBankNum.Margin = new System.Windows.Forms.Padding(4);
             this.tbBankNum.Name = "tbBankNum";
+            this.tbBankNum.ReadOnly = true;
             this.tbBankNum.Size = new System.Drawing.Size(211, 20);
             this.tbBankNum.TabIndex = 10;
             // 
@@ -443,9 +488,10 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(24, 23);
             this.button10.TabIndex = 21;
-            this.button10.Text = "button10";
+            this.button10.Text = "btnEdit0";
             this.toolTip1.SetToolTip(this.button10, "Chỉnh sửa dòng này");
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button6
             // 
@@ -455,9 +501,10 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(24, 23);
             this.button6.TabIndex = 19;
-            this.button6.Text = "button6";
+            this.button6.Text = "btnEdit4";
             this.toolTip1.SetToolTip(this.button6, "Chỉnh sửa dòng này");
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -467,9 +514,10 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(24, 23);
             this.button5.TabIndex = 19;
-            this.button5.Text = "button5";
+            this.button5.Text = "btnEdit3";
             this.toolTip1.SetToolTip(this.button5, "Chỉnh sửa dòng này");
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -479,9 +527,10 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(24, 23);
             this.button4.TabIndex = 18;
-            this.button4.Text = "button4";
+            this.button4.Text = "btnEdit2";
             this.toolTip1.SetToolTip(this.button4, "Chỉnh sửa dòng này");
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -491,9 +540,10 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(24, 23);
             this.button2.TabIndex = 17;
-            this.button2.Text = "button2";
+            this.button2.Text = "btnEdit1";
             this.toolTip1.SetToolTip(this.button2, "Chỉnh sửa dòng này");
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // pnGender
             // 
@@ -758,10 +808,12 @@
             // dtgvAllUser
             // 
             this.dtgvAllUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvAllUser.Location = new System.Drawing.Point(2, 63);
+            this.dtgvAllUser.ContextMenuStrip = this.contextMenuStrip1;
+            this.dtgvAllUser.Location = new System.Drawing.Point(2, 64);
             this.dtgvAllUser.Name = "dtgvAllUser";
-            this.dtgvAllUser.Size = new System.Drawing.Size(483, 366);
+            this.dtgvAllUser.Size = new System.Drawing.Size(483, 362);
             this.dtgvAllUser.TabIndex = 0;
+            this.dtgvAllUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvAllUser_CellContentClick);
             this.dtgvAllUser.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtgvAllAcc_CellFormatting);
             // 
             // tabPageMenu
@@ -867,15 +919,43 @@
             // 
             // btnReturn
             // 
+            this.btnReturn.BackColor = System.Drawing.Color.DarkRed;
             this.btnReturn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReturn.BackgroundImage")));
             this.btnReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnReturn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnReturn.Location = new System.Drawing.Point(12, 12);
+            this.btnReturn.Location = new System.Drawing.Point(12, 4);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(50, 23);
+            this.btnReturn.Size = new System.Drawing.Size(40, 35);
             this.btnReturn.TabIndex = 10;
-            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thêmToolStripMenuItem,
+            this.sửaToolStripMenuItem,
+            this.xóaToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(106, 70);
+            // 
+            // thêmToolStripMenuItem
+            // 
+            this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
+            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.thêmToolStripMenuItem.Text = "Thêm";
+            // 
+            // sửaToolStripMenuItem
+            // 
+            this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
+            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sửaToolStripMenuItem.Text = "Sửa";
+            // 
+            // xóaToolStripMenuItem
+            // 
+            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xóaToolStripMenuItem.Text = "Xóa";
             // 
             // frmManager
             // 
@@ -917,6 +997,7 @@
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -978,14 +1059,12 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox tbUserName;
-        private System.Windows.Forms.TextBox tbTypeAcc;
         private System.Windows.Forms.TextBox tbIDcardNum;
         private System.Windows.Forms.Label CMND;
         private System.Windows.Forms.Panel pnGender;
         private System.Windows.Forms.RadioButton rdbtnFemale;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
@@ -995,5 +1074,13 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnViewMore;
         private System.Windows.Forms.TextBox tbSearchUser;
+        private System.Windows.Forms.Button btnEditAll;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ComboBox cbTypeAcc;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem thêmToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sửaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
     }
 }

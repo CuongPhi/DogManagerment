@@ -28,68 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStaff));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabDogList = new System.Windows.Forms.TabControl();
-            this.tabpAccount = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.grbChoosingDog = new System.Windows.Forms.GroupBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.tbPassW = new System.Windows.Forms.TextBox();
-            this.lbDateIn = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.tbDogID = new System.Windows.Forms.TextBox();
-            this.lbDogID = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.cbbTypeDog = new System.Windows.Forms.ComboBox();
-            this.lbTypeDog = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.lbDogWeight = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnViewListDog = new System.Windows.Forms.Button();
-            this.btnAddDog = new System.Windows.Forms.Button();
-            this.btnDelDog = new System.Windows.Forms.Button();
-            this.btnEditDog = new System.Windows.Forms.Button();
-            this.tbFindDog = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabPagePayDog = new System.Windows.Forms.TabPage();
             this.tabPageMenu = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             this.grbListStaff = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.tabpAccount = new System.Windows.Forms.TabPage();
+            this.tabDogList = new System.Windows.Forms.TabControl();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbSearchUser = new System.Windows.Forms.TextBox();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnViewListUser = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.tbIDDogOwner = new System.Windows.Forms.Label();
-            this.tabPagePayDog = new System.Windows.Forms.TabPage();
-            this.btnBack = new System.Windows.Forms.Button();
+            this.dtgvListDog = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
-            this.tabDogList.SuspendLayout();
-            this.tabpAccount.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.grbChoosingDog.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPageMenu.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panel4.SuspendLayout();
             this.grbListStaff.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.panel5.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.tabpAccount.SuspendLayout();
+            this.tabDogList.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvListDog)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -122,247 +100,15 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // tabDogList
+            // tabPagePayDog
             // 
-            this.tabDogList.Controls.Add(this.tabpAccount);
-            this.tabDogList.Controls.Add(this.tabPageMenu);
-            this.tabDogList.Controls.Add(this.tabPagePayDog);
-            this.tabDogList.Location = new System.Drawing.Point(1, 2);
-            this.tabDogList.Name = "tabDogList";
-            this.tabDogList.SelectedIndex = 0;
-            this.tabDogList.Size = new System.Drawing.Size(864, 414);
-            this.tabDogList.TabIndex = 1;
-            // 
-            // tabpAccount
-            // 
-            this.tabpAccount.AutoScroll = true;
-            this.tabpAccount.Controls.Add(this.panel2);
-            this.tabpAccount.Controls.Add(this.panel1);
-            this.tabpAccount.Controls.Add(this.dataGridView1);
-            this.tabpAccount.Location = new System.Drawing.Point(4, 22);
-            this.tabpAccount.Name = "tabpAccount";
-            this.tabpAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpAccount.Size = new System.Drawing.Size(856, 388);
-            this.tabpAccount.TabIndex = 0;
-            this.tabpAccount.Text = "D.Sách chó";
-            this.tabpAccount.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.grbChoosingDog);
-            this.panel2.Location = new System.Drawing.Point(489, 44);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(364, 341);
-            this.panel2.TabIndex = 9;
-            // 
-            // grbChoosingDog
-            // 
-            this.grbChoosingDog.BackColor = System.Drawing.SystemColors.Window;
-            this.grbChoosingDog.Controls.Add(this.textBox2);
-            this.grbChoosingDog.Controls.Add(this.panel5);
-            this.grbChoosingDog.Controls.Add(this.tbIDDogOwner);
-            this.grbChoosingDog.Controls.Add(this.panel6);
-            this.grbChoosingDog.Controls.Add(this.panel7);
-            this.grbChoosingDog.Controls.Add(this.panel9);
-            this.grbChoosingDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.grbChoosingDog.Location = new System.Drawing.Point(3, 3);
-            this.grbChoosingDog.Name = "grbChoosingDog";
-            this.grbChoosingDog.Size = new System.Drawing.Size(361, 335);
-            this.grbChoosingDog.TabIndex = 8;
-            this.grbChoosingDog.TabStop = false;
-            this.grbChoosingDog.Text = "Chó được chọn";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.tbPassW);
-            this.panel6.Controls.Add(this.lbDateIn);
-            this.panel6.Location = new System.Drawing.Point(1, 90);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(176, 36);
-            this.panel6.TabIndex = 10;
-            // 
-            // tbPassW
-            // 
-            this.tbPassW.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbPassW.Location = new System.Drawing.Point(87, 6);
-            this.tbPassW.Margin = new System.Windows.Forms.Padding(4);
-            this.tbPassW.Name = "tbPassW";
-            this.tbPassW.Size = new System.Drawing.Size(85, 20);
-            this.tbPassW.TabIndex = 1;
-            this.tbPassW.Text = "10/01/2001";
-            this.tbPassW.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lbDateIn
-            // 
-            this.lbDateIn.AutoSize = true;
-            this.lbDateIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbDateIn.Location = new System.Drawing.Point(4, 9);
-            this.lbDateIn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbDateIn.Name = "lbDateIn";
-            this.lbDateIn.Size = new System.Drawing.Size(64, 17);
-            this.lbDateIn.TabIndex = 0;
-            this.lbDateIn.Text = "Ng.vào:";
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.tbDogID);
-            this.panel7.Controls.Add(this.lbDogID);
-            this.panel7.Controls.Add(this.panel8);
-            this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel7.Location = new System.Drawing.Point(1, 20);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(359, 36);
-            this.panel7.TabIndex = 8;
-            // 
-            // tbDogID
-            // 
-            this.tbDogID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbDogID.Location = new System.Drawing.Point(87, 6);
-            this.tbDogID.Margin = new System.Windows.Forms.Padding(4);
-            this.tbDogID.Name = "tbDogID";
-            this.tbDogID.Size = new System.Drawing.Size(85, 23);
-            this.tbDogID.TabIndex = 1;
-            this.tbDogID.Text = "123";
-            this.tbDogID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lbDogID
-            // 
-            this.lbDogID.AutoSize = true;
-            this.lbDogID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbDogID.Location = new System.Drawing.Point(4, 12);
-            this.lbDogID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbDogID.Name = "lbDogID";
-            this.lbDogID.Size = new System.Drawing.Size(65, 17);
-            this.lbDogID.TabIndex = 0;
-            this.lbDogID.Text = "Mã chó:";
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.cbbTypeDog);
-            this.panel8.Controls.Add(this.lbTypeDog);
-            this.panel8.Location = new System.Drawing.Point(177, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(176, 36);
-            this.panel8.TabIndex = 11;
-            // 
-            // cbbTypeDog
-            // 
-            this.cbbTypeDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbbTypeDog.FormattingEnabled = true;
-            this.cbbTypeDog.Items.AddRange(new object[] {
-            "Cỏ",
-            "Rừng",
-            "Sói",
-            "Ngao",
-            "ChiWaWa"});
-            this.cbbTypeDog.Location = new System.Drawing.Point(90, 8);
-            this.cbbTypeDog.Name = "cbbTypeDog";
-            this.cbbTypeDog.Size = new System.Drawing.Size(85, 21);
-            this.cbbTypeDog.TabIndex = 1;
-            this.cbbTypeDog.Text = "Ngao";
-            // 
-            // lbTypeDog
-            // 
-            this.lbTypeDog.AutoSize = true;
-            this.lbTypeDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbTypeDog.Location = new System.Drawing.Point(4, 9);
-            this.lbTypeDog.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTypeDog.Name = "lbTypeDog";
-            this.lbTypeDog.Size = new System.Drawing.Size(70, 17);
-            this.lbTypeDog.TabIndex = 0;
-            this.lbTypeDog.Text = "Loại chó";
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.numericUpDown1);
-            this.panel9.Controls.Add(this.lbDogWeight);
-            this.panel9.Location = new System.Drawing.Point(1, 56);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(176, 36);
-            this.panel9.TabIndex = 9;
-            // 
-            // lbDogWeight
-            // 
-            this.lbDogWeight.AutoSize = true;
-            this.lbDogWeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbDogWeight.Location = new System.Drawing.Point(4, 9);
-            this.lbDogWeight.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbDogWeight.Name = "lbDogWeight";
-            this.lbDogWeight.Size = new System.Drawing.Size(82, 17);
-            this.lbDogWeight.TabIndex = 0;
-            this.lbDogWeight.Text = "Cân nặng:";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnViewListDog);
-            this.panel1.Controls.Add(this.btnAddDog);
-            this.panel1.Controls.Add(this.btnDelDog);
-            this.panel1.Controls.Add(this.btnEditDog);
-            this.panel1.Controls.Add(this.tbFindDog);
-            this.panel1.Location = new System.Drawing.Point(6, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(480, 39);
-            this.panel1.TabIndex = 3;
-            // 
-            // btnViewListDog
-            // 
-            this.btnViewListDog.Location = new System.Drawing.Point(232, 7);
-            this.btnViewListDog.Name = "btnViewListDog";
-            this.btnViewListDog.Size = new System.Drawing.Size(81, 29);
-            this.btnViewListDog.TabIndex = 6;
-            this.btnViewListDog.Text = "Xem D.Sách";
-            this.btnViewListDog.UseVisualStyleBackColor = true;
-            // 
-            // btnAddDog
-            // 
-            this.btnAddDog.Location = new System.Drawing.Point(3, 7);
-            this.btnAddDog.Name = "btnAddDog";
-            this.btnAddDog.Size = new System.Drawing.Size(73, 29);
-            this.btnAddDog.TabIndex = 5;
-            this.btnAddDog.Text = "Thêm chó";
-            this.btnAddDog.UseVisualStyleBackColor = true;
-            // 
-            // btnDelDog
-            // 
-            this.btnDelDog.Location = new System.Drawing.Point(161, 7);
-            this.btnDelDog.Name = "btnDelDog";
-            this.btnDelDog.Size = new System.Drawing.Size(65, 29);
-            this.btnDelDog.TabIndex = 4;
-            this.btnDelDog.Text = "Xóa chó";
-            this.btnDelDog.UseVisualStyleBackColor = true;
-            // 
-            // btnEditDog
-            // 
-            this.btnEditDog.Location = new System.Drawing.Point(82, 6);
-            this.btnEditDog.Name = "btnEditDog";
-            this.btnEditDog.Size = new System.Drawing.Size(73, 29);
-            this.btnEditDog.TabIndex = 3;
-            this.btnEditDog.Text = "Sửa TT Chó";
-            this.btnEditDog.UseVisualStyleBackColor = true;
-            // 
-            // tbFindDog
-            // 
-            this.tbFindDog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbFindDog.Location = new System.Drawing.Point(319, 9);
-            this.tbFindDog.Name = "tbFindDog";
-            this.tbFindDog.Size = new System.Drawing.Size(158, 21);
-            this.tbFindDog.TabIndex = 2;
-            this.tbFindDog.Text = "Tìm kiếm";
-            this.tbFindDog.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbFindDog.TextChanged += new System.EventHandler(this.tbFindDog_TextChanged);
-            this.tbFindDog.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbFindDog_MouseDown);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 44);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(480, 338);
-            this.dataGridView1.TabIndex = 0;
+            this.tabPagePayDog.Location = new System.Drawing.Point(4, 22);
+            this.tabPagePayDog.Name = "tabPagePayDog";
+            this.tabPagePayDog.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePayDog.Size = new System.Drawing.Size(856, 388);
+            this.tabPagePayDog.TabIndex = 2;
+            this.tabPagePayDog.Text = "Bàn giao chó";
+            this.tabPagePayDog.UseVisualStyleBackColor = true;
             // 
             // tabPageMenu
             // 
@@ -378,23 +124,45 @@
             this.tabPageMenu.Text = "Thống kê";
             this.tabPageMenu.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // panel3
             // 
-            this.groupBox2.Controls.Add(this.dataGridView3);
-            this.groupBox2.Location = new System.Drawing.Point(435, 37);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(418, 351);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin thu chi";
+            this.panel3.Location = new System.Drawing.Point(3, 6);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(425, 25);
+            this.panel3.TabIndex = 0;
             // 
-            // dataGridView3
+            // panel4
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(2, 16);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(425, 335);
-            this.dataGridView3.TabIndex = 1;
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.dateTimePicker2);
+            this.panel4.Controls.Add(this.dateTimePicker1);
+            this.panel4.Location = new System.Drawing.Point(434, 6);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(422, 28);
+            this.panel4.TabIndex = 1;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(3, 5);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(163, 20);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(256, 5);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(163, 20);
+            this.dateTimePicker2.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(182, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(56, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Xem";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // grbListStaff
             // 
@@ -414,168 +182,203 @@
             this.dataGridView2.Size = new System.Drawing.Size(428, 332);
             this.dataGridView2.TabIndex = 0;
             // 
-            // panel4
+            // groupBox2
             // 
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.dateTimePicker2);
-            this.panel4.Controls.Add(this.dateTimePicker1);
-            this.panel4.Location = new System.Drawing.Point(434, 6);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(422, 28);
-            this.panel4.TabIndex = 1;
+            this.groupBox2.Controls.Add(this.dataGridView3);
+            this.groupBox2.Location = new System.Drawing.Point(435, 37);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(418, 351);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Thông tin thu chi";
             // 
-            // button1
+            // dataGridView3
             // 
-            this.button1.Location = new System.Drawing.Point(182, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Xem";
-            this.button1.UseVisualStyleBackColor = true;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(2, 16);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(425, 335);
+            this.dataGridView3.TabIndex = 1;
             // 
-            // dateTimePicker2
+            // tabpAccount
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(256, 5);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(163, 20);
-            this.dateTimePicker2.TabIndex = 1;
+            this.tabpAccount.AutoScroll = true;
+            this.tabpAccount.Controls.Add(this.groupBox1);
+            this.tabpAccount.Controls.Add(this.panel2);
+            this.tabpAccount.Controls.Add(this.dtgvListDog);
+            this.tabpAccount.Location = new System.Drawing.Point(4, 22);
+            this.tabpAccount.Name = "tabpAccount";
+            this.tabpAccount.Padding = new System.Windows.Forms.Padding(3);
+            this.tabpAccount.Size = new System.Drawing.Size(704, 426);
+            this.tabpAccount.TabIndex = 0;
+            this.tabpAccount.Text = "D.Sách chó";
+            this.tabpAccount.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
+            // tabDogList
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(3, 5);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(163, 20);
-            this.dateTimePicker1.TabIndex = 0;
+            this.tabDogList.Controls.Add(this.tabpAccount);
+            this.tabDogList.Controls.Add(this.tabPageMenu);
+            this.tabDogList.Controls.Add(this.tabPagePayDog);
+            this.tabDogList.Location = new System.Drawing.Point(12, 3);
+            this.tabDogList.Name = "tabDogList";
+            this.tabDogList.SelectedIndex = 0;
+            this.tabDogList.Size = new System.Drawing.Size(712, 452);
+            this.tabDogList.TabIndex = 1;
             // 
-            // panel3
+            // groupBox1
             // 
-            this.panel3.Location = new System.Drawing.Point(3, 6);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(425, 25);
-            this.panel3.TabIndex = 0;
+            this.groupBox1.Controls.Add(this.tbSearchUser);
+            this.groupBox1.Controls.Add(this.btnThoat);
+            this.groupBox1.Controls.Add(this.btnSua);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnThem);
+            this.groupBox1.Controls.Add(this.btnViewListUser);
+            this.groupBox1.Controls.Add(this.btnXoa);
+            this.groupBox1.Location = new System.Drawing.Point(3, 58);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(695, 51);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
             // 
-            // numericUpDown1
+            // tbSearchUser
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(87, 7);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(85, 20);
-            this.numericUpDown1.TabIndex = 1;
+            this.tbSearchUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbSearchUser.Location = new System.Drawing.Point(502, 15);
+            this.tbSearchUser.Margin = new System.Windows.Forms.Padding(4);
+            this.tbSearchUser.Name = "tbSearchUser";
+            this.tbSearchUser.Size = new System.Drawing.Size(157, 24);
+            this.tbSearchUser.TabIndex = 0;
             // 
-            // panel5
+            // btnThoat
             // 
-            this.panel5.Controls.Add(this.textBox1);
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(185, 90);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(172, 36);
-            this.panel5.TabIndex = 11;
+            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.Color.Red;
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThoat.Location = new System.Drawing.Point(5, 12);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(75, 31);
+            this.btnThoat.TabIndex = 5;
+            this.btnThoat.Text = "   Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // btnSua
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(86, 6);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(82, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "15/01/2004";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.Color.Blue;
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(167, 12);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(75, 31);
+            this.btnSua.TabIndex = 7;
+            this.btnSua.Text = "   Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button3.Location = new System.Drawing.Point(657, 14);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(35, 26);
+            this.button3.TabIndex = 7;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.Color.Blue;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(86, 12);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 31);
+            this.btnThem.TabIndex = 8;
+            this.btnThem.Text = "  Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            // 
+            // btnViewListUser
+            // 
+            this.btnViewListUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnViewListUser.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnViewListUser.ForeColor = System.Drawing.Color.Blue;
+            this.btnViewListUser.Image = ((System.Drawing.Image)(resources.GetObject("btnViewListUser.Image")));
+            this.btnViewListUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnViewListUser.Location = new System.Drawing.Point(329, 12);
+            this.btnViewListUser.Name = "btnViewListUser";
+            this.btnViewListUser.Size = new System.Drawing.Size(85, 31);
+            this.btnViewListUser.TabIndex = 6;
+            this.btnViewListUser.Text = "    Refresh";
+            this.btnViewListUser.UseVisualStyleBackColor = true;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.Color.Blue;
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(248, 12);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 31);
+            this.btnXoa.TabIndex = 6;
+            this.btnXoa.Text = "Xoá";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(3, 9);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(692, 40);
+            this.panel2.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(4, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.Location = new System.Drawing.Point(194, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ng.ra";
+            this.label1.Size = new System.Drawing.Size(363, 31);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "QUẢN LÝ DANH SÁCH CHÓ";
             // 
-            // textBox2
+            // dtgvListDog
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox2.Location = new System.Drawing.Point(268, 59);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(85, 23);
-            this.textBox2.TabIndex = 13;
-            this.textBox2.Text = "123";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbIDDogOwner
-            // 
-            this.tbIDDogOwner.AutoSize = true;
-            this.tbIDDogOwner.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbIDDogOwner.Location = new System.Drawing.Point(182, 62);
-            this.tbIDDogOwner.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.tbIDDogOwner.Name = "tbIDDogOwner";
-            this.tbIDDogOwner.Size = new System.Drawing.Size(65, 17);
-            this.tbIDDogOwner.TabIndex = 12;
-            this.tbIDDogOwner.Text = "Mã chủ:";
-            // 
-            // tabPagePayDog
-            // 
-            this.tabPagePayDog.Location = new System.Drawing.Point(4, 22);
-            this.tabPagePayDog.Name = "tabPagePayDog";
-            this.tabPagePayDog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePayDog.Size = new System.Drawing.Size(856, 388);
-            this.tabPagePayDog.TabIndex = 2;
-            this.tabPagePayDog.Text = "Bàn giao chó";
-            this.tabPagePayDog.UseVisualStyleBackColor = true;
-            // 
-            // btnBack
-            // 
-            this.btnBack.Location = new System.Drawing.Point(5, 418);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 26);
-            this.btnBack.TabIndex = 2;
-            this.btnBack.Text = "Trở về";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.dtgvListDog.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dtgvListDog.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtgvListDog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvListDog.Location = new System.Drawing.Point(3, 107);
+            this.dtgvListDog.Name = "dtgvListDog";
+            this.dtgvListDog.Size = new System.Drawing.Size(695, 319);
+            this.dtgvListDog.TabIndex = 13;
             // 
             // frmStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 446);
-            this.Controls.Add(this.btnBack);
+            this.ClientSize = new System.Drawing.Size(728, 457);
             this.Controls.Add(this.tabDogList);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmStaff";
             this.Text = "frmStaff";
             this.Load += new System.EventHandler(this.frmStaff_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabDogList.ResumeLayout(false);
-            this.tabpAccount.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.grbChoosingDog.ResumeLayout(false);
-            this.grbChoosingDog.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPageMenu.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.grbListStaff.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.tabpAccount.ResumeLayout(false);
+            this.tabDogList.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvListDog)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -585,28 +388,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabControl tabDogList;
-        private System.Windows.Forms.TabPage tabpAccount;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.GroupBox grbChoosingDog;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox tbPassW;
-        private System.Windows.Forms.Label lbDateIn;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox tbDogID;
-        private System.Windows.Forms.Label lbDogID;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.ComboBox cbbTypeDog;
-        private System.Windows.Forms.Label lbTypeDog;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label lbDogWeight;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnViewListDog;
-        private System.Windows.Forms.Button btnAddDog;
-        private System.Windows.Forms.Button btnDelDog;
-        private System.Windows.Forms.Button btnEditDog;
-        private System.Windows.Forms.TextBox tbFindDog;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TabPage tabPagePayDog;
         private System.Windows.Forms.TabPage tabPageMenu;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView3;
@@ -617,13 +399,18 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TabPage tabpAccount;
+        private System.Windows.Forms.TabControl tabDogList;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox tbSearchUser;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnViewListUser;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label tbIDDogOwner;
-        private System.Windows.Forms.TabPage tabPagePayDog;
-        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.DataGridView dtgvListDog;
     }
 }

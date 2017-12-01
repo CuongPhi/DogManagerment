@@ -11,17 +11,17 @@ namespace DogManage_HCMC.DTO
         public Person()      {   }
         private Account account;
         private  PersonInfo info;
-        private int bankAccountNum;
+        private string bankAccountNum;
         private int salary;
-        private int medicalCode;
+        private string medicalCode;
         private int _FringeBenegit;
         private DateTime dateJoin;
 
         public  PersonInfo Info { get => info; set => info = value; }
-        public int BankAccountNum { get => bankAccountNum; set => bankAccountNum = value; }
+        public string BankAccountNum { get => bankAccountNum; set => bankAccountNum = value; }
         public int Salary { get => salary; set => salary = value; }
         public Account Account { get => account; set => account = value; }
-        public int MedicalCode { get => medicalCode; set => medicalCode = value; }
+        public string MedicalCode { get => medicalCode; set => medicalCode = value; }
         public int FringeBenegit { get => _FringeBenegit; set => _FringeBenegit = value; }
         public DateTime DateJoin { get => dateJoin; set => dateJoin = value; }
     }

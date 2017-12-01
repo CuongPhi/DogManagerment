@@ -13,18 +13,20 @@ namespace DogManage_HCMC.DTO
         {
 
         }
-  
 
-        public SoftWareUser(DataRow r)
+
+        public SoftWareUser(DataRow r, bool isALlinfo)
         {
-            this.BankAccountNum = (int)r["BankNum"];
+            this.BankAccountNum = r["BankNum"].ToString();
             this.Info = new PersonInfo(r);
             this.Salary = (int)r["BasicSalary"];
-            this.MedicalCode = (int)r["MedicalCOde"];
+            this.MedicalCode = r["MedicalCOde"].ToString();
             this.FringeBenegit = (int)r["FringeBenefit"];
             this.DateJoin = (DateTime)r["DateJoin"];
-            this.Account = new Account(r);
-           
+            if(isALlinfo)
+            {
+                this.Account = new Account(r);
+            }
         }
 
     }

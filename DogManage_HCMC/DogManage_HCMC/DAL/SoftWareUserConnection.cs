@@ -28,25 +28,47 @@ namespace DogManage_HCMC.DAL
         {
             return DataConnection.Inst.ExcuteQuery("");
         }
-        public SoftWareUser getUserByUserName(string username)
+        public SoftWareUser getUserInfor(string que)
         {
-            DataTable account = DataConnection.Inst.ExcuteQuery("Select * from account where userName = '" + username + "'");
+            DataTable account = DataConnection.Inst.ExcuteQuery(que);
             foreach (DataRow item in account.Rows)
             {
-                return new SoftWareUser(item);
+                return new SoftWareUser(item,false);
             }
             return null;
         }
-        public List< SoftWareUser > getAllUser()
+    
+        public SoftWareUser getUserByUserName(string username)
         {
-            DataTable account = DataConnection.Inst.ExcuteQuery("Select * from personinfo pi, userapp p, account a where pi.idperson = p.idperson and a.username=  p.account");
+            string que = string.Format("SELECT * from dbo.USERAPP u, dbo.PERSONINFO p WHERE u.IDPERSON = p.IDPERSON  and p.typepsi =1 AND U.ACCOUNT = '{0}'", username);
+
+            return getUserInfor(que);
+        }
+        public SoftWareUser getUserByID(string id)
+        {
+            string que = string.Format("SELECT * from dbo.USERAPP u, dbo.PERSONINFO p WHERE u.IDPERSON = p.IDPERSON  and p.typepsi =1 AND p.idperson = '{0}'", id);
+
+            return getUserInfor(que);
+        }
+        public List< SoftWareUser > getAllUser(string que)
+        {
+            DataTable account = DataConnection.Inst.ExcuteQuery(que);
             List<SoftWareUser> l = new List<SoftWareUser>();
             foreach (DataRow item in account.Rows)
             {
-                l.Add(new SoftWareUser(item));
+                l.Add(new SoftWareUser(item, true));
 
             }
             return l;
+        }
+        public List<SoftWareUser> getAllUser()
+        {
+            return getAllUser("Select * from personinfo pi, userapp p, account a where pi.idperson = p.idperson and a.username=  p.account  and pi.typepsi =1");
+        }
+        public List<SoftWareUser> getAllInforUser(string id)
+        {
+            string que = string.Format("Select * from personinfo pi, userapp p, account a where pi.idperson = p.idperson and pi.typepsi =1 and a.username=  p.account and  p.idperson = '{0}'", id);
+            return getAllUser(que);
         }
     }
 }

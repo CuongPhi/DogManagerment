@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DogManage_HCMC.DTO
 {
-    enum typeDog
+    public enum typeDog
     {
         type1 =1,
         type2= 2,
@@ -25,14 +25,17 @@ namespace DogManage_HCMC.DTO
 
         public Dog(DataRow row)
         {
-            this.typeDog = (typeDog)row["typeDog"];
-            this.FoodMoney = (int)row["FoodMoney"];
-            this.idDog = (int)row["idDog"];
-            this.isInject = (bool)row["isInject"];
-            this.weight = (int)row["weight"];
-            this.DateIn = (DateTime)row["dateIn"];
-            this.dateOut = new DateTime().AddDays(3);
-            
+            try
+            {
+                this.TypeDog = (typeDog)row["type"];
+                this.FoodMoney = (int)row["FoodMoney"];
+                this.idDog = (int)row["idDog"];
+                this.weight = (int)row["weight"];
+                this.DateIn = (DateTime)row["dateInt"];
+                this.dateOut = new DateTime(DateIn.Year,DateIn.Month,DateIn.Day).AddDays(3);
+                this.isInject = (bool)row["isInject"];
+            }
+            catch { }
         }
 
         public int IdDog { get => idDog; set => idDog = value; }
@@ -41,7 +44,8 @@ namespace DogManage_HCMC.DTO
         public DateTime DateOut { get => dateOut; set => dateOut = value; }
         public bool IsInject { get => isInject; set => isInject = value; }
         public int FoodMoney1 { get => FoodMoney; set => FoodMoney = value; }
-        internal typeDog TypeDog { get => typeDog; set => typeDog = value; }
+        public typeDog TypeDog { get => typeDog; set => typeDog = value; }
+
         public long getFine()
         {
             return 1;

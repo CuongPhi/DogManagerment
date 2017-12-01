@@ -14,17 +14,20 @@ namespace DogManage_HCMC.GUI_BLL
 {
     public partial class frmChangePersonInfor : Form
     {
+        //Form này có thuộc tính account để lưu tài khoản đang đăng nhập
         Account _acc = new Account();
         public frmChangePersonInfor(Account acc)
         {
             _acc = acc;
             InitializeComponent();
         }
-
+        //
+        // Load tất cả thông tin của tài khoản đang đăng nhập
         public void loadAllInfoAccount()
         {
-            SoftWareUser user = AccountConnection.Inst.getSoftWareUserByUserName(_acc.UserName);
-            if(user==null)
+           
+            SoftWareUser user = SoftWareUserConnection.Inst.getUserByUserName(_acc.UserName);
+            if (user==null)
             {
                 MessageBox.Show("Tải thông tin thất bại, vui lòng thử lại sau !");
                 this.Close();
@@ -35,6 +38,7 @@ namespace DogManage_HCMC.GUI_BLL
                 loadUser(user);
             }
         }
+        // Thay đổi text của các control hiện thị ở UI theo tài khoản đang đăng nhập
         public void loadUser(SoftWareUser s)
         {
             tbAddress.Text = s.Info.Address;

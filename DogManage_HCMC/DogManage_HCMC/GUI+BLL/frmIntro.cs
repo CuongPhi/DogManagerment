@@ -45,7 +45,7 @@ namespace DogManage_HCMC
         private void quảnLýToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmManager FrmManager = new frmManager();
+            frmManager FrmManager = new frmManager(_acc);
             FrmManager.ShowDialog();
 
             this.Show();
@@ -102,7 +102,7 @@ namespace DogManage_HCMC
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmChangePassW frmfcp = new frmChangePassW(_acc);
-            frmfcp.ShowDialog();
+            frmfcp.Show();
             if(frmfcp.IsChangedPass)
             {
                 this.Close();

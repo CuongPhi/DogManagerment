@@ -19,7 +19,7 @@ namespace DogManage_HCMC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new frmStaff());
 
         }
     }

@@ -37,7 +37,7 @@ namespace DogManage_HCMC.DAL
 
         public List<PersonInfo> getAllPerSonInfor()
         {
-            return getListUser("Select * from personinfo");
+            return getListUser("Select * from personinfo where typePSI = 1");
         }
         public List <PersonInfo> getListUser(string que)
         {
@@ -52,12 +52,12 @@ namespace DogManage_HCMC.DAL
 
         public List<PersonInfo> SearchUserByName(string name)
         {
-           return getListUser(string.Format("Select * from personinfo where name like '%{0}%'",name));                    
+           return getListUser(string.Format("Select * from personinfo where typepsi = 1 and name like '%{0}%'",name));                    
         }
 
         public List<PersonInfo> SearchUserByEmail(string email)
         {
-            return getListUser(string.Format("Select * from personinfo where email like '%{0}%'", email));
+            return getListUser(string.Format("Select * from personinfo where  typepsi = 1 and  email like '%{0}%'", email));
         }
     }
 }

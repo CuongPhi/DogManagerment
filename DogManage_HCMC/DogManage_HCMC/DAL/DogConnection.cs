@@ -24,10 +24,10 @@ namespace DogManage_HCMC.DAL
         }
         private DogConnection() { }
        
-        public List<Dog> getListAccount()
+        public List<Dog> getListDog()
         {
             List<Dog> list = new List<Dog>();
-            DataTable data =  DataConnection.Inst.ExcuteQuery("");
+            DataTable data =  DataConnection.Inst.ExcuteQuery("select * from dog");
             foreach (DataRow item in data.Rows)
             {
                 list.Add(new Dog(item));    

@@ -12,9 +12,9 @@ namespace DogManage_HCMC.DTO
         private string address;
         private DateTime birthDay;
         private string eMail;
-        private int phoneNum;
-        private int idCardNumber; // CMND
-        private int idPerson;
+        private string phoneNum;
+        private string idCardNumber; // CMND
+        private string idPerson;
         private string name;
         private bool gender;
 
@@ -26,13 +26,13 @@ namespace DogManage_HCMC.DTO
         {
             try
             {
-                this.PhoneNum = (int)r["PhoneNum"];
+                this.PhoneNum =r["PhoneNum"].ToString();
                 this.Address = StandardString(r["address"].ToString());
                 this.Gender = (bool)r["Gender"];
                 this.BirthDay = (DateTime)r["Birhday"];
-                this.IdPerson = (int)r["IDperson"];
+                this.IdPerson =r["IDperson"].ToString();
                 this.Name = StandardString(r["Name"].ToString());
-                this.IdCardNumber = (int)r["IDcardNum"];
+                this.IdCardNumber = r["IDcardNum"].ToString();
                 this.EMail = r["Email"].ToString().Trim().ToLower();          
             }
             catch
@@ -56,8 +56,8 @@ namespace DogManage_HCMC.DTO
         public string Address { get => address; set => address = value; } 
         public DateTime BirthDay { get => birthDay; set => birthDay = value; }
         public string EMail { get => eMail; set => eMail = value; }
-        public int PhoneNum { get => phoneNum; set => phoneNum = value; }
-        public int IdCardNumber { get => idCardNumber; set => idCardNumber = value; }
-        public int IdPerson { get => idPerson; set => idPerson = value; }
+        public string PhoneNum { get => phoneNum; set => phoneNum = value; }
+        public string IdCardNumber { get => idCardNumber; set => idCardNumber = value; }
+        public string IdPerson { get => idPerson; set => idPerson = value; }
     }
 }
