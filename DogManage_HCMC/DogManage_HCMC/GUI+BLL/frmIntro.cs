@@ -76,7 +76,7 @@ namespace DogManage_HCMC
         {
 
             this.Hide();
-            frmStaff FrmStaff = new frmStaff();
+            frmStaff FrmStaff = new frmStaff(_acc);
             FrmStaff.ShowDialog();
 
             this.Show();
@@ -89,7 +89,11 @@ namespace DogManage_HCMC
 
         private void kếToánToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            frmAccountant frA = new frmAccountant();
+            frA.ShowDialog();
 
+            this.Show();
         }
 
         private void frmIntro_Load(object sender, EventArgs e)
@@ -102,7 +106,7 @@ namespace DogManage_HCMC
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmChangePassW frmfcp = new frmChangePassW(_acc);
-            frmfcp.Show();
+            frmfcp.ShowDialog();
             if(frmfcp.IsChangedPass)
             {
                 this.Close();

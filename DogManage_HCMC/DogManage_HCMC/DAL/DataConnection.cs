@@ -53,18 +53,25 @@ namespace DogManage_HCMC.DAL
         }
         public int ExcuteNoneQuery(string stringQuery, object[] parameter = null)
         {
-            int data = 0;
-            using (SqlConnection conn = new SqlConnection(strconnection))
+            try
             {
-                if (conn.State == ConnectionState.Closed || conn.State == ConnectionState.Broken)
-                    conn.Open();
-                SqlCommand command = new SqlCommand(stringQuery, conn);
-                if (parameter != null)
-                    SplitParaString(stringQuery, command, parameter);
-                data = command.ExecuteNonQuery();
-                conn.Close();
+                int data = 0;
+                using (SqlConnection conn = new SqlConnection(strconnection))
+                {
+                    if (conn.State == ConnectionState.Closed || conn.State == ConnectionState.Broken)
+                        conn.Open();
+                    SqlCommand command = new SqlCommand(stringQuery, conn);
+                    if (parameter != null)
+                        SplitParaString(stringQuery, command, parameter);
+                    data = command.ExecuteNonQuery();
+                    conn.Close();
+                }
+                return data;
             }
-            return data;
+            catch
+            {
+                return -1; // lỗi xóa bảng liên quan đến ràng buộc
+            }
         }
         public object ExcuteScalar(string stringQuery, object[] parameter = null)
         {

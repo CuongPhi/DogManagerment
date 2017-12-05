@@ -53,7 +53,7 @@
             // 
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLogin.Location = new System.Drawing.Point(117, 97);
+            this.btnLogin.Location = new System.Drawing.Point(75, 97);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(77, 31);
@@ -69,18 +69,18 @@
             this.pnUsername.Location = new System.Drawing.Point(4, 4);
             this.pnUsername.Margin = new System.Windows.Forms.Padding(4);
             this.pnUsername.Name = "pnUsername";
-            this.pnUsername.Size = new System.Drawing.Size(309, 36);
+            this.pnUsername.Size = new System.Drawing.Size(279, 36);
             this.pnUsername.TabIndex = 1;
             // 
             // tbUserName
             // 
             this.tbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbUserName.Location = new System.Drawing.Point(97, 9);
+            this.tbUserName.Location = new System.Drawing.Point(109, 9);
             this.tbUserName.Margin = new System.Windows.Forms.Padding(4);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(198, 23);
+            this.tbUserName.Size = new System.Drawing.Size(144, 23);
             this.tbUserName.TabIndex = 1;
-            this.tbUserName.Text = "admin";
+            this.tbUserName.Text = "hue";
             this.tbUserName.TextChanged += new System.EventHandler(this.tbUserName_TextChanged);
             // 
             // lbUsername
@@ -101,18 +101,18 @@
             this.pnPassw.Location = new System.Drawing.Point(4, 48);
             this.pnPassw.Margin = new System.Windows.Forms.Padding(4);
             this.pnPassw.Name = "pnPassw";
-            this.pnPassw.Size = new System.Drawing.Size(309, 37);
+            this.pnPassw.Size = new System.Drawing.Size(279, 37);
             this.pnPassw.TabIndex = 2;
             // 
             // tbPassword
             // 
             this.tbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbPassword.Location = new System.Drawing.Point(97, 6);
+            this.tbPassword.Location = new System.Drawing.Point(109, 6);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(198, 23);
+            this.tbPassword.Size = new System.Drawing.Size(144, 23);
             this.tbPassword.TabIndex = 2;
-            this.tbPassword.Text = "admin";
+            this.tbPassword.Text = "1";
             // 
             // lbPassword
             // 
@@ -129,7 +129,7 @@
             // 
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnExit.Location = new System.Drawing.Point(202, 97);
+            this.btnExit.Location = new System.Drawing.Point(169, 97);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(59, 31);
@@ -166,9 +166,9 @@
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.lbIntroSoft);
             this.panel1.Controls.Add(this.btnExit);
-            this.panel1.Location = new System.Drawing.Point(12, 64);
+            this.panel1.Location = new System.Drawing.Point(12, 55);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(324, 156);
+            this.panel1.Size = new System.Drawing.Size(324, 165);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -180,7 +180,7 @@
             this.panel2.Controls.Add(this.pnPassw);
             this.panel2.Location = new System.Drawing.Point(3, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(318, 89);
+            this.panel2.Size = new System.Drawing.Size(296, 89);
             this.panel2.TabIndex = 7;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -201,7 +201,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(83, 20);
+            this.label1.Location = new System.Drawing.Point(66, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 22);

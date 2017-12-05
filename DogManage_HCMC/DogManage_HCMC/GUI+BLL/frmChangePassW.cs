@@ -28,13 +28,13 @@ namespace DogManage_HCMC.GUI_BLL
         {
             if (tbCurrPassW.Text != _acc.PassWord)
             {
-                MessageBox.Show("Mật khẩu k đúng !!");
+                MessageBox.Show("Mật khẩu không đúng !!");
                 return;
 
             }
             else if (tbNewPassW0.Text.Length < 1)
             {
-                MessageBox.Show("Mật khẩu không đc rỗng !!");
+                MessageBox.Show("Mật khẩu không được rỗng !!");
                 return;
             }
             else if (tbNewPassW0.Text != tbNewPassW1.Text)
@@ -53,6 +53,11 @@ namespace DogManage_HCMC.GUI_BLL
                 IsChangedPass = true;
                 this.Close();
             }
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

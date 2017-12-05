@@ -22,7 +22,7 @@ namespace DogManage_HCMC.DTO
             private DateTime dateIn;
             private DateTime dateOut;
             private bool isInject;
-
+        public Dog() { }
         public Dog(DataRow row)
         {
             try
@@ -32,10 +32,20 @@ namespace DogManage_HCMC.DTO
                 this.idDog = (int)row["idDog"];
                 this.weight = (int)row["weight"];
                 this.DateIn = (DateTime)row["dateInt"];
-                this.dateOut = new DateTime(DateIn.Year,DateIn.Month,DateIn.Day).AddDays(3);
+                this.dateOut = (DateTime)row["dateout"];
                 this.isInject = (bool)row["isInject"];
             }
             catch { }
+        }
+        public Dog(int nweigth, typeDog ntype, DateTime ndateint, DateTime ndateout, bool nisinject, int nfood)
+        {
+            this.Weight = nweigth;
+            this.TypeDog = ntype;
+            this.DateIn = ndateint;
+            this.DateOut = ndateout;
+            this.IsInject = nisinject;
+            this.FoodMoney1 = nfood;
+
         }
 
         public int IdDog { get => idDog; set => idDog = value; }

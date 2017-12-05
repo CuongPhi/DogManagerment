@@ -33,7 +33,7 @@ namespace DogManage_HCMC
         void loadData()
         {
             dtgvAllUser.DataSource = _personInforBindings;
-
+            
             loadAllAccount();
             PersonInfoBiding();
         }
@@ -153,6 +153,7 @@ namespace DogManage_HCMC
         /// <param name="e"></param>
         private void frmManager_Load(object sender, EventArgs e)
         {
+            this.Text += _acc.UserName;
             loadAllAccount();
             setAllControlBoxReadOnlyOnGrBox(true);
         }
@@ -412,5 +413,25 @@ namespace DogManage_HCMC
             }
         }
 
+        private void ctmnstripDTGV_Opening(object sender, CancelEventArgs e)
+        {
+            if(dtgvAllUser.RowCount < 2)
+            {
+                e.Cancel = true;
+            }
+            
+
+            
+        }
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabpAccount_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

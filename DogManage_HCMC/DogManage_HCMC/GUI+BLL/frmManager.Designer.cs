@@ -91,6 +91,9 @@
             this.btnDelAcc = new System.Windows.Forms.Button();
             this.btnEditAcc = new System.Windows.Forms.Button();
             this.dtgvAllUser = new System.Windows.Forms.DataGridView();
+            this.ctmnstripDTGV = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPageMenu = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -104,10 +107,13 @@
             this.tbFindUser = new System.Windows.Forms.TextBox();
             this.btnReturn = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sửaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctmntripSearch = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tìmTheoMãToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.ctnmstripSearch = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tìmTheoSốĐTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabp.SuspendLayout();
             this.tabpAccount.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -121,6 +127,7 @@
             this.pnGender.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAllUser)).BeginInit();
+            this.ctmnstripDTGV.SuspendLayout();
             this.tabPageMenu.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -128,7 +135,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
+            this.ctmntripSearch.SuspendLayout();
+            this.ctnmstripSearch.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabp
@@ -146,6 +154,7 @@
             // 
             this.tabpAccount.AutoScroll = true;
             this.tabpAccount.BackColor = System.Drawing.Color.Lavender;
+            this.tabpAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tabpAccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabpAccount.Controls.Add(this.panel6);
             this.tabpAccount.Controls.Add(this.panel2);
@@ -156,7 +165,8 @@
             this.tabpAccount.Padding = new System.Windows.Forms.Padding(3);
             this.tabpAccount.Size = new System.Drawing.Size(918, 430);
             this.tabpAccount.TabIndex = 0;
-            this.tabpAccount.Text = "Tài khoản";
+            this.tabpAccount.Text = "D.S NV";
+            this.tabpAccount.Click += new System.EventHandler(this.tabpAccount_Click);
             // 
             // panel6
             // 
@@ -755,6 +765,7 @@
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button3.ContextMenuStrip = this.ctnmstripSearch;
             this.button3.Location = new System.Drawing.Point(434, 17);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(35, 26);
@@ -807,14 +818,36 @@
             // 
             // dtgvAllUser
             // 
+            this.dtgvAllUser.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dtgvAllUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvAllUser.ContextMenuStrip = this.contextMenuStrip1;
+            this.dtgvAllUser.ContextMenuStrip = this.ctmnstripDTGV;
             this.dtgvAllUser.Location = new System.Drawing.Point(2, 64);
             this.dtgvAllUser.Name = "dtgvAllUser";
             this.dtgvAllUser.Size = new System.Drawing.Size(483, 362);
             this.dtgvAllUser.TabIndex = 0;
             this.dtgvAllUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvAllUser_CellContentClick);
             this.dtgvAllUser.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtgvAllAcc_CellFormatting);
+            // 
+            // ctmnstripDTGV
+            // 
+            this.ctmnstripDTGV.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sửaToolStripMenuItem,
+            this.xóaToolStripMenuItem});
+            this.ctmnstripDTGV.Name = "contextMenuStrip1";
+            this.ctmnstripDTGV.Size = new System.Drawing.Size(95, 48);
+            this.ctmnstripDTGV.Opening += new System.ComponentModel.CancelEventHandler(this.ctmnstripDTGV_Opening);
+            // 
+            // sửaToolStripMenuItem
+            // 
+            this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
+            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.sửaToolStripMenuItem.Text = "Sửa";
+            // 
+            // xóaToolStripMenuItem
+            // 
+            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.xóaToolStripMenuItem.Text = "Xóa";
             // 
             // tabPageMenu
             // 
@@ -930,32 +963,52 @@
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // contextMenuStrip1
+            // ctmntripSearch
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thêmToolStripMenuItem,
-            this.sửaToolStripMenuItem,
-            this.xóaToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(106, 70);
+            this.ctmntripSearch.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tìmTheoMãToolStripMenuItem,
+            this.toolStripTextBox1});
+            this.ctmntripSearch.Name = "ctmntripSearch";
+            this.ctmntripSearch.Size = new System.Drawing.Size(161, 51);
             // 
-            // thêmToolStripMenuItem
+            // tìmTheoMãToolStripMenuItem
             // 
-            this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
-            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.thêmToolStripMenuItem.Text = "Thêm";
+            this.tìmTheoMãToolStripMenuItem.Name = "tìmTheoMãToolStripMenuItem";
+            this.tìmTheoMãToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.tìmTheoMãToolStripMenuItem.Text = "Tìm theo Mã";
             // 
-            // sửaToolStripMenuItem
+            // toolStripTextBox1
             // 
-            this.sửaToolStripMenuItem.Name = "sửaToolStripMenuItem";
-            this.sửaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.sửaToolStripMenuItem.Text = "Sửa";
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
-            // xóaToolStripMenuItem
+            // ctnmstripSearch
             // 
-            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.xóaToolStripMenuItem.Text = "Xóa";
+            this.ctnmstripSearch.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.tìmTheoSốĐTToolStripMenuItem});
+            this.ctnmstripSearch.Name = "contextMenuStrip1";
+            this.ctnmstripSearch.Size = new System.Drawing.Size(157, 70);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
+            this.toolStripMenuItem1.Text = "Tìm theo Mã";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(156, 22);
+            this.toolStripMenuItem2.Text = "Tìm theo Email";
+            // 
+            // tìmTheoSốĐTToolStripMenuItem
+            // 
+            this.tìmTheoSốĐTToolStripMenuItem.Name = "tìmTheoSốĐTToolStripMenuItem";
+            this.tìmTheoSốĐTToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.tìmTheoSốĐTToolStripMenuItem.Text = "Tìm theo Số ĐT";
             // 
             // frmManager
             // 
@@ -969,7 +1022,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmManager";
-            this.Text = "Chức năng-Quản lý";
+            this.Text = "Quản lý: ";
             this.Load += new System.EventHandler(this.frmManager_Load);
             this.tabp.ResumeLayout(false);
             this.tabpAccount.ResumeLayout(false);
@@ -989,6 +1042,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAllUser)).EndInit();
+            this.ctmnstripDTGV.ResumeLayout(false);
             this.tabPageMenu.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
@@ -997,7 +1051,9 @@
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.ctmntripSearch.ResumeLayout(false);
+            this.ctmntripSearch.PerformLayout();
+            this.ctnmstripSearch.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1078,9 +1134,15 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ComboBox cbTypeAcc;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem thêmToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip ctmnstripDTGV;
         private System.Windows.Forms.ToolStripMenuItem sửaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip ctmntripSearch;
+        private System.Windows.Forms.ToolStripMenuItem tìmTheoMãToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ContextMenuStrip ctnmstripSearch;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem tìmTheoSốĐTToolStripMenuItem;
     }
 }
