@@ -34,11 +34,15 @@ namespace DogManage_HCMC.DTO
         //hàm dựng 1
         public Account(DataRow row)
         {
-            this.PassWord = row["passWord"].ToString();
-            this.Pass2= row["passWord2"].ToString();
-            this.IsLock = (bool)row["isLock"];
-            this.Type = (typeAccount)row["type"];
-            this.UserName = row["userName"].ToString();
+            try
+            {
+                this.PassWord = row["passWord"].ToString();
+                this.Pass2 = row["passWord2"].ToString();
+                this.IsLock = (bool)row["isLock"];
+                this.Type = (typeAccount)row["type"];
+                this.UserName = row["userName"].ToString();
+            }
+            catch { }
 
         }
         // hàm dựng 2

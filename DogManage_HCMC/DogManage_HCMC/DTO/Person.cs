@@ -16,7 +16,7 @@ namespace DogManage_HCMC.DTO
         private string medicalCode;
         private int _FringeBenegit;
         private DateTime dateJoin;
-
+        private byte[] image;
         public  PersonInfo Info { get => info; set => info = value; }
         public string BankAccountNum { get => bankAccountNum; set => bankAccountNum = value; }
         public int Salary { get => salary; set => salary = value; }
@@ -24,5 +24,6 @@ namespace DogManage_HCMC.DTO
         public string MedicalCode { get => medicalCode; set => medicalCode = value; }
         public int FringeBenegit { get => _FringeBenegit; set => _FringeBenegit = value; }
         public DateTime DateJoin { get => dateJoin; set => dateJoin = value; }
+        public byte[] Image { get => image; set => image = value; }
     }
 }

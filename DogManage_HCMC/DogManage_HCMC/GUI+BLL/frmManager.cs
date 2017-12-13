@@ -1,10 +1,12 @@
 ﻿using DogManage_HCMC.DAL;
 using DogManage_HCMC.DTO;
+using DogManage_HCMC.GUI_BLL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -126,6 +128,13 @@ namespace DogManage_HCMC
 
             dtgvAllUser.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
+        }
+        Image byteArrToImage(byte[] b)
+        {
+            if (b == null) return null;
+            MemoryStream str = new MemoryStream(b);
+            Image img = Image.FromStream(str);
+            return img;
         }
         private void btnReturn_Click(object sender, EventArgs e)
         {
@@ -272,6 +281,8 @@ namespace DogManage_HCMC
                 tbMedicalCode.Text = s.MedicalCode.ToString();
                 nmrudfringe.Value = s.FringeBenegit;
                 tbUserName.Text = s.Account.UserName;
+                pictureBox1.Image = byteArrToImage(s.Image);
+
                 if(s.Account.Type == typeAccount.Accountant)
                 {
                     cbTypeAcc.SelectedItem = cbTypeAcc.Items[0];
@@ -335,6 +346,7 @@ namespace DogManage_HCMC
         private void button6_Click(object sender, EventArgs e)
         {
             tbAddress.ReadOnly = false;
+            nmrudfringe.ReadOnly = false;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -344,7 +356,7 @@ namespace DogManage_HCMC
         private void button8_Click(object sender, EventArgs e)
         {
             tbMedicalCode.ReadOnly = false;
-            nmrudfringe.ReadOnly = false;
+         
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -430,6 +442,17 @@ namespace DogManage_HCMC
         }
 
         private void tabpAccount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddAcc_Click(object sender, EventArgs e)
+        {
+            frmAddStaff frmA = new frmAddStaff();
+            frmA.ShowDialog();
+        }
+
+        private void cbTypeAcc_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

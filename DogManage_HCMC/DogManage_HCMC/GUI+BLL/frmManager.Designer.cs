@@ -86,6 +86,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbSearchUser = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.ctnmstripSearch = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tìmTheoSốĐTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnViewListUser = new System.Windows.Forms.Button();
             this.btnAddAcc = new System.Windows.Forms.Button();
             this.btnDelAcc = new System.Windows.Forms.Button();
@@ -110,10 +114,7 @@
             this.ctmntripSearch = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tìmTheoMãToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.ctnmstripSearch = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tìmTheoSốĐTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabp.SuspendLayout();
             this.tabpAccount.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -126,6 +127,7 @@
             this.grbInfor.SuspendLayout();
             this.pnGender.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.ctnmstripSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAllUser)).BeginInit();
             this.ctmnstripDTGV.SuspendLayout();
             this.tabPageMenu.SuspendLayout();
@@ -136,7 +138,7 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.ctmntripSearch.SuspendLayout();
-            this.ctnmstripSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabp
@@ -277,6 +279,7 @@
             this.cbTypeAcc.Name = "cbTypeAcc";
             this.cbTypeAcc.Size = new System.Drawing.Size(95, 21);
             this.cbTypeAcc.TabIndex = 22;
+            this.cbTypeAcc.SelectedIndexChanged += new System.EventHandler(this.cbTypeAcc_SelectedIndexChanged);
             // 
             // button11
             // 
@@ -344,10 +347,9 @@
             // 
             // grbSalary
             // 
+            this.grbSalary.Controls.Add(this.pictureBox1);
             this.grbSalary.Controls.Add(this.button9);
             this.grbSalary.Controls.Add(this.button8);
-            this.grbSalary.Controls.Add(this.nmrudfringe);
-            this.grbSalary.Controls.Add(this.label7);
             this.grbSalary.Controls.Add(this.label9);
             this.grbSalary.Controls.Add(this.label12);
             this.grbSalary.Controls.Add(this.label13);
@@ -364,7 +366,7 @@
             // 
             this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button9.Location = new System.Drawing.Point(363, 61);
+            this.button9.Location = new System.Drawing.Point(211, 66);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(24, 23);
             this.button9.TabIndex = 18;
@@ -377,7 +379,7 @@
             // 
             this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.Location = new System.Drawing.Point(363, 35);
+            this.button8.Location = new System.Drawing.Point(211, 41);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(24, 23);
             this.button8.TabIndex = 20;
@@ -388,7 +390,7 @@
             // 
             // nmrudfringe
             // 
-            this.nmrudfringe.Location = new System.Drawing.Point(280, 39);
+            this.nmrudfringe.Location = new System.Drawing.Point(316, 125);
             this.nmrudfringe.Name = "nmrudfringe";
             this.nmrudfringe.Size = new System.Drawing.Size(40, 20);
             this.nmrudfringe.TabIndex = 18;
@@ -397,7 +399,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(212, 41);
+            this.label7.Location = new System.Drawing.Point(251, 128);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 13);
@@ -440,7 +442,7 @@
             this.tbBankNum.Margin = new System.Windows.Forms.Padding(4);
             this.tbBankNum.Name = "tbBankNum";
             this.tbBankNum.ReadOnly = true;
-            this.tbBankNum.Size = new System.Drawing.Size(211, 20);
+            this.tbBankNum.Size = new System.Drawing.Size(95, 20);
             this.tbBankNum.TabIndex = 10;
             // 
             // tbMedicalCode
@@ -464,7 +466,9 @@
             // 
             this.grbInfor.Controls.Add(this.button10);
             this.grbInfor.Controls.Add(this.button6);
+            this.grbInfor.Controls.Add(this.nmrudfringe);
             this.grbInfor.Controls.Add(this.button5);
+            this.grbInfor.Controls.Add(this.label7);
             this.grbInfor.Controls.Add(this.button4);
             this.grbInfor.Controls.Add(this.button2);
             this.grbInfor.Controls.Add(this.pnGender);
@@ -733,7 +737,7 @@
             this.tbAddress.Location = new System.Drawing.Point(71, 123);
             this.tbAddress.Margin = new System.Windows.Forms.Padding(4);
             this.tbAddress.Name = "tbAddress";
-            this.tbAddress.Size = new System.Drawing.Size(286, 20);
+            this.tbAddress.Size = new System.Drawing.Size(162, 20);
             this.tbAddress.TabIndex = 0;
             // 
             // panel1
@@ -772,6 +776,33 @@
             this.button3.TabIndex = 7;
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // ctnmstripSearch
+            // 
+            this.ctnmstripSearch.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.tìmTheoSốĐTToolStripMenuItem});
+            this.ctnmstripSearch.Name = "contextMenuStrip1";
+            this.ctnmstripSearch.Size = new System.Drawing.Size(157, 70);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
+            this.toolStripMenuItem1.Text = "Tìm theo Mã";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(156, 22);
+            this.toolStripMenuItem2.Text = "Tìm theo Email";
+            // 
+            // tìmTheoSốĐTToolStripMenuItem
+            // 
+            this.tìmTheoSốĐTToolStripMenuItem.Name = "tìmTheoSốĐTToolStripMenuItem";
+            this.tìmTheoSốĐTToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.tìmTheoSốĐTToolStripMenuItem.Text = "Tìm theo Số ĐT";
+            // 
             // btnViewListUser
             // 
             this.btnViewListUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnViewListUser.BackgroundImage")));
@@ -794,6 +825,7 @@
             this.btnAddAcc.TabIndex = 5;
             this.toolTip1.SetToolTip(this.btnAddAcc, "Thêm tài khoản");
             this.btnAddAcc.UseVisualStyleBackColor = true;
+            this.btnAddAcc.Click += new System.EventHandler(this.btnAddAcc_Click);
             // 
             // btnDelAcc
             // 
@@ -983,32 +1015,16 @@
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
-            // ctnmstripSearch
+            // pictureBox1
             // 
-            this.ctnmstripSearch.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.tìmTheoSốĐTToolStripMenuItem});
-            this.ctnmstripSearch.Name = "contextMenuStrip1";
-            this.ctnmstripSearch.Size = new System.Drawing.Size(157, 70);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
-            this.toolStripMenuItem1.Text = "Tìm theo Mã";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(156, 22);
-            this.toolStripMenuItem2.Text = "Tìm theo Email";
-            // 
-            // tìmTheoSốĐTToolStripMenuItem
-            // 
-            this.tìmTheoSốĐTToolStripMenuItem.Name = "tìmTheoSốĐTToolStripMenuItem";
-            this.tìmTheoSốĐTToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.tìmTheoSốĐTToolStripMenuItem.Text = "Tìm theo Số ĐT";
+            this.pictureBox1.BackColor = System.Drawing.Color.AliceBlue;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(277, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
             // 
             // frmManager
             // 
@@ -1041,6 +1057,7 @@
             this.pnGender.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.ctnmstripSearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAllUser)).EndInit();
             this.ctmnstripDTGV.ResumeLayout(false);
             this.tabPageMenu.ResumeLayout(false);
@@ -1053,7 +1070,7 @@
             this.panel3.PerformLayout();
             this.ctmntripSearch.ResumeLayout(false);
             this.ctmntripSearch.PerformLayout();
-            this.ctnmstripSearch.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1144,5 +1161,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem tìmTheoSốĐTToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

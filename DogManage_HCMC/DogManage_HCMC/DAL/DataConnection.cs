@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DogManage_HCMC.DAL
 {
@@ -32,6 +33,7 @@ namespace DogManage_HCMC.DAL
                 if (item.Contains('@'))
                 {
                     command.Parameters.AddWithValue(item, parameter[i]);
+                   
                     i++;
                 }
             }
@@ -51,6 +53,21 @@ namespace DogManage_HCMC.DAL
             }
             return data;
         }
+        public bool saveImage(string que, byte [] img)
+        {
+            int data = 0;
+
+       
+            using (SqlConnection conn = new SqlConnection(strconnection))
+            {
+                if (conn.State == ConnectionState.Closed || conn.State == ConnectionState.Broken)
+                    conn.Open();
+                SqlCommand cmd = new SqlCommand(que, conn);
+                cmd.Parameters.Add(new SqlParameter("@image", SqlDbType.Image)).Value = img;
+                data = cmd.ExecuteNonQuery();
+            }
+            return data >0;
+        }
         public int ExcuteNoneQuery(string stringQuery, object[] parameter = null)
         {
             try
@@ -68,8 +85,9 @@ namespace DogManage_HCMC.DAL
                 }
                 return data;
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 return -1; // lỗi xóa bảng liên quan đến ràng buộc
             }
         }

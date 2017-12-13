@@ -119,11 +119,27 @@ namespace DogManage_HCMC.DAL
                 return false;
             }
         }
+        public bool userNameIsExits(string userName)
+        {
+            string que = string.Format("SELECT USERNAME FROM dbo.ACCOUNT WHERE USERNAME = '{0}'", userName);
+            DataTable dt = DataConnection.Inst.ExcuteQuery(que);
+            foreach (var item in dt.Rows)
+            {
+                return true;
+            }
+            return false;
+        }
         public bool changTypeAccount(int index, string userName)
         {
-            int type = 1;
-            if (type != index)
-            { type = index == 0 ? 3 : 2; }
+            int type = 2;
+            if (index == 0)
+            {
+                type = 3;
+            }
+            else if (index == 1)
+            {
+                type = 1;
+            }
             try
             {
                 string que = string.Format("UPDATE dbo.ACCOUNT SET Type = '{0}' WHERE USERNAME = '{1}'", type, userName);
