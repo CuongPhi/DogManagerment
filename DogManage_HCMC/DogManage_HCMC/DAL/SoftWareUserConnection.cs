@@ -73,7 +73,7 @@ namespace DogManage_HCMC.DAL
         public bool bankNumIsExits(string bankNum)
         {
             string que = string.Format("SELECT BANKNUM FROM dbo.USERAPP WHERE BANKNUM = '{0}'", bankNum);
-             DataTable dt=  DataConnection.Inst.ExcuteQuery(que);
+            DataTable dt = DataConnection.Inst.ExcuteQuery(que);
             foreach (var item in dt.Rows)
             {
                 return true;
@@ -84,6 +84,12 @@ namespace DogManage_HCMC.DAL
         {
             string sql = "update userapp set img = (@image) where idperson = '" + id + "'";
             return DataConnection.Inst.saveImage(sql, image);
+        }
+
+        public bool updateMedicalCode(string med, string id)
+        {
+            string que = string.Format("  update userapp SET medicalcode = '{0}' where idperson = '{1}'", med, id);
+            return DataConnection.Inst.ExcuteNoneQuery(que) > 0;
         }
         public bool addStaff(string id, string userName, string bankNum, string basicSalary, int type)
         {
@@ -96,6 +102,30 @@ namespace DogManage_HCMC.DAL
               DataConnection.Inst.ExcuteNoneQuery(newPSI) > 0 &&
               DataConnection.Inst.ExcuteNoneQuery(newUser) > 0;
 
+        }
+        public bool managerUpdateForStaff(string id, string bankNum = null, string basicSlary = null, string fringe = null)
+        {
+            if (bankNum == null && basicSlary == null && fringe == null)
+            {
+                return false;
+            }
+
+            string val = "";
+            if (bankNum != null)
+            {
+                val += string.Format(" banknum = '{0}'", bankNum);
+            }
+            if (basicSlary != null)
+            {
+                val += string.Format(" , basicsalary = {0}", basicSlary);
+            }
+            if (fringe != null)
+            {
+                val += string.Format(" , fringebenefit = {0}", fringe);
+            }
+
+            string que = string.Format("update userapp set {0} where idperson = '{1}'", val, id);
+            return DataConnection.Inst.ExcuteNoneQuery(que) > 0;
         }
     }
 }

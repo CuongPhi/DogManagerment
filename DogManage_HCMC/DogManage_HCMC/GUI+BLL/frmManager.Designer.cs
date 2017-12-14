@@ -48,10 +48,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.tbUserName = new System.Windows.Forms.TextBox();
             this.grbSalary = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.nmrudfringe = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -59,11 +58,11 @@
             this.tbMedicalCode = new System.Windows.Forms.TextBox();
             this.tbBasicSalary = new System.Windows.Forms.TextBox();
             this.grbInfor = new System.Windows.Forms.GroupBox();
-            this.button10 = new System.Windows.Forms.Button();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.button6 = new System.Windows.Forms.Button();
+            this.nmrudfringe = new System.Windows.Forms.NumericUpDown();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             this.pnGender = new System.Windows.Forms.Panel();
             this.rdbtnFemale = new System.Windows.Forms.RadioButton();
             this.rdbtnMale = new System.Windows.Forms.RadioButton();
@@ -74,7 +73,6 @@
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tbID = new System.Windows.Forms.TextBox();
-            this.tbDateJoin = new System.Windows.Forms.TextBox();
             this.tbBirthDay = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
@@ -114,7 +112,6 @@
             this.ctmntripSearch = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tìmTheoMãToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabp.SuspendLayout();
             this.tabpAccount.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -123,8 +120,9 @@
             this.panel5.SuspendLayout();
             this.grbAccount.SuspendLayout();
             this.grbSalary.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrudfringe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.grbInfor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrudfringe)).BeginInit();
             this.pnGender.SuspendLayout();
             this.panel1.SuspendLayout();
             this.ctnmstripSearch.SuspendLayout();
@@ -138,7 +136,6 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.ctmntripSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabp
@@ -362,6 +359,17 @@
             this.grbSalary.TabIndex = 15;
             this.grbSalary.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.AliceBlue;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(277, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
             // button9
             // 
             this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
@@ -379,7 +387,7 @@
             // 
             this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.Location = new System.Drawing.Point(211, 41);
+            this.button8.Location = new System.Drawing.Point(211, 11);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(24, 23);
             this.button8.TabIndex = 20;
@@ -387,24 +395,6 @@
             this.toolTip1.SetToolTip(this.button8, "Chỉnh sửa dòng này");
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // nmrudfringe
-            // 
-            this.nmrudfringe.Location = new System.Drawing.Point(316, 125);
-            this.nmrudfringe.Name = "nmrudfringe";
-            this.nmrudfringe.Size = new System.Drawing.Size(40, 20);
-            this.nmrudfringe.TabIndex = 18;
-            this.toolTip1.SetToolTip(this.nmrudfringe, "Tăng giảm % phụ cấp");
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(251, 128);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Phụ cấp %:";
             // 
             // label9
             // 
@@ -450,6 +440,7 @@
             this.tbMedicalCode.Location = new System.Drawing.Point(110, 38);
             this.tbMedicalCode.Margin = new System.Windows.Forms.Padding(4);
             this.tbMedicalCode.Name = "tbMedicalCode";
+            this.tbMedicalCode.ReadOnly = true;
             this.tbMedicalCode.Size = new System.Drawing.Size(94, 20);
             this.tbMedicalCode.TabIndex = 11;
             // 
@@ -464,13 +455,11 @@
             // 
             // grbInfor
             // 
-            this.grbInfor.Controls.Add(this.button10);
+            this.grbInfor.Controls.Add(this.dateTimePicker3);
             this.grbInfor.Controls.Add(this.button6);
             this.grbInfor.Controls.Add(this.nmrudfringe);
             this.grbInfor.Controls.Add(this.button5);
             this.grbInfor.Controls.Add(this.label7);
-            this.grbInfor.Controls.Add(this.button4);
-            this.grbInfor.Controls.Add(this.button2);
             this.grbInfor.Controls.Add(this.pnGender);
             this.grbInfor.Controls.Add(this.tbIDcardNum);
             this.grbInfor.Controls.Add(this.CMND);
@@ -479,7 +468,6 @@
             this.grbInfor.Controls.Add(this.tbEmail);
             this.grbInfor.Controls.Add(this.label16);
             this.grbInfor.Controls.Add(this.tbID);
-            this.grbInfor.Controls.Add(this.tbDateJoin);
             this.grbInfor.Controls.Add(this.tbBirthDay);
             this.grbInfor.Controls.Add(this.label4);
             this.grbInfor.Controls.Add(this.tbName);
@@ -494,18 +482,13 @@
             this.grbInfor.TabIndex = 14;
             this.grbInfor.TabStop = false;
             // 
-            // button10
+            // dateTimePicker3
             // 
-            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.Location = new System.Drawing.Point(363, 18);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(24, 23);
-            this.button10.TabIndex = 21;
-            this.button10.Text = "btnEdit0";
-            this.toolTip1.SetToolTip(this.button10, "Chỉnh sửa dòng này");
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(71, 98);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(101, 20);
+            this.dateTimePicker3.TabIndex = 20;
             // 
             // button6
             // 
@@ -520,6 +503,14 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // nmrudfringe
+            // 
+            this.nmrudfringe.Location = new System.Drawing.Point(316, 125);
+            this.nmrudfringe.Name = "nmrudfringe";
+            this.nmrudfringe.Size = new System.Drawing.Size(40, 20);
+            this.nmrudfringe.TabIndex = 18;
+            this.toolTip1.SetToolTip(this.nmrudfringe, "Tăng giảm % phụ cấp");
+            // 
             // button5
             // 
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
@@ -533,36 +524,21 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // label7
             // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(363, 71);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(24, 23);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "btnEdit2";
-            this.toolTip1.SetToolTip(this.button4, "Chỉnh sửa dòng này");
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(363, 46);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(24, 23);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "btnEdit1";
-            this.toolTip1.SetToolTip(this.button2, "Chỉnh sửa dòng này");
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(251, 128);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Phụ cấp %:";
             // 
             // pnGender
             // 
             this.pnGender.Controls.Add(this.rdbtnFemale);
             this.pnGender.Controls.Add(this.rdbtnMale);
+            this.pnGender.Enabled = false;
             this.pnGender.Location = new System.Drawing.Point(254, 9);
             this.pnGender.Name = "pnGender";
             this.pnGender.Size = new System.Drawing.Size(102, 33);
@@ -626,6 +602,7 @@
             this.tbPhoneNum.Location = new System.Drawing.Point(255, 98);
             this.tbPhoneNum.Margin = new System.Windows.Forms.Padding(4);
             this.tbPhoneNum.Name = "tbPhoneNum";
+            this.tbPhoneNum.ReadOnly = true;
             this.tbPhoneNum.Size = new System.Drawing.Size(102, 20);
             this.tbPhoneNum.TabIndex = 4;
             // 
@@ -634,6 +611,7 @@
             this.tbEmail.Location = new System.Drawing.Point(255, 74);
             this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbEmail.Name = "tbEmail";
+            this.tbEmail.ReadOnly = true;
             this.tbEmail.Size = new System.Drawing.Size(102, 20);
             this.tbEmail.TabIndex = 2;
             // 
@@ -656,20 +634,12 @@
             this.tbID.Size = new System.Drawing.Size(101, 20);
             this.tbID.TabIndex = 1;
             // 
-            // tbDateJoin
-            // 
-            this.tbDateJoin.Location = new System.Drawing.Point(71, 97);
-            this.tbDateJoin.Margin = new System.Windows.Forms.Padding(4);
-            this.tbDateJoin.Name = "tbDateJoin";
-            this.tbDateJoin.ReadOnly = true;
-            this.tbDateJoin.Size = new System.Drawing.Size(101, 20);
-            this.tbDateJoin.TabIndex = 10;
-            // 
             // tbBirthDay
             // 
             this.tbBirthDay.Location = new System.Drawing.Point(71, 74);
             this.tbBirthDay.Margin = new System.Windows.Forms.Padding(4);
             this.tbBirthDay.Name = "tbBirthDay";
+            this.tbBirthDay.ReadOnly = true;
             this.tbBirthDay.Size = new System.Drawing.Size(101, 20);
             this.tbBirthDay.TabIndex = 2;
             // 
@@ -737,6 +707,7 @@
             this.tbAddress.Location = new System.Drawing.Point(71, 123);
             this.tbAddress.Margin = new System.Windows.Forms.Padding(4);
             this.tbAddress.Name = "tbAddress";
+            this.tbAddress.ReadOnly = true;
             this.tbAddress.Size = new System.Drawing.Size(162, 20);
             this.tbAddress.TabIndex = 0;
             // 
@@ -847,6 +818,7 @@
             this.btnEditAcc.TabIndex = 3;
             this.toolTip1.SetToolTip(this.btnEditAcc, "Chỉnh sửa tài khoản");
             this.btnEditAcc.UseVisualStyleBackColor = true;
+            this.btnEditAcc.Click += new System.EventHandler(this.btnEditAcc_Click);
             // 
             // dtgvAllUser
             // 
@@ -858,7 +830,6 @@
             this.dtgvAllUser.Size = new System.Drawing.Size(483, 362);
             this.dtgvAllUser.TabIndex = 0;
             this.dtgvAllUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvAllUser_CellContentClick);
-            this.dtgvAllUser.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dtgvAllAcc_CellFormatting);
             // 
             // ctmnstripDTGV
             // 
@@ -1015,17 +986,6 @@
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.AliceBlue;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(277, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1050,9 +1010,10 @@
             this.grbAccount.PerformLayout();
             this.grbSalary.ResumeLayout(false);
             this.grbSalary.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmrudfringe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.grbInfor.ResumeLayout(false);
             this.grbInfor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrudfringe)).EndInit();
             this.pnGender.ResumeLayout(false);
             this.pnGender.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -1070,7 +1031,6 @@
             this.panel3.PerformLayout();
             this.ctmntripSearch.ResumeLayout(false);
             this.ctmntripSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1113,7 +1073,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbAddress;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox tbDateJoin;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tbBirthDay;
         private System.Windows.Forms.GroupBox grbSalary;
@@ -1138,11 +1097,8 @@
         private System.Windows.Forms.RadioButton rdbtnFemale;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RadioButton rdbtnMale;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnViewMore;
@@ -1162,5 +1118,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem tìmTheoSốĐTToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
     }
 }

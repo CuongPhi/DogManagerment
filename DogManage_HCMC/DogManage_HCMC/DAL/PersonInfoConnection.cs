@@ -50,6 +50,16 @@ namespace DogManage_HCMC.DAL
             return l;
         }
 
+        public bool updatePSI(string id,string phoneNum, string idCardNum, string Address, string Email, string Birthday, int gender)
+        {
+            string que = string.Format("UPDATE PERSONINFO SET IDCARDNUM= '{0}', ADDRESS = N'{1}', PHONENUM= '{2}', EMAIL = '{3}', BIRHDAY = '{4}', GENDER = {5} WHERE IDPERSON = '{6}'", idCardNum, Address, phoneNum, Email, Birthday,gender ,id);
+            return DataConnection.Inst.ExcuteNoneQuery(que) > 0;
+        }
+        public bool updateName(string name, string idperson)
+        {
+            string que = string.Format("  update PERSONINFO SET NAME = N'{0}' where idperson = '{1}'",name,idperson);
+            return DataConnection.Inst.ExcuteNoneQuery(que) > 0;
+        }
         public List<PersonInfo> SearchUserByName(string name)
         {
             return getListUser(string.Format("Select * from personinfo where typepsi = 1 and name like '%{0}%'", name));

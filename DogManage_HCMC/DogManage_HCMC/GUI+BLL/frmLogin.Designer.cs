@@ -80,7 +80,7 @@
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(144, 23);
             this.tbUserName.TabIndex = 1;
-            this.tbUserName.Text = "hue";
+            this.tbUserName.Text = "admin";
             this.tbUserName.TextChanged += new System.EventHandler(this.tbUserName_TextChanged);
             // 
             // lbUsername

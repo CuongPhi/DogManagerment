@@ -23,7 +23,8 @@ namespace DogManage_HCMC
         private BindingSource _personInforBindings = new BindingSource();
         private SoftWareUser s = null;
         private Account _acc = new Account();
-        public frmManager( Account acc)
+        private bool isEdit = false;
+        public frmManager(Account acc)
         {
             InitializeComponent();
             _acc = acc;
@@ -35,7 +36,7 @@ namespace DogManage_HCMC
         void loadData()
         {
             dtgvAllUser.DataSource = _personInforBindings;
-            
+
             loadAllAccount();
             PersonInfoBiding();
         }
@@ -69,7 +70,7 @@ namespace DogManage_HCMC
             _personInforBindings.DataSource = PersonInfoConnection.Inst.getAllPerSonInfor();
         }
         /// <summary>
-        /// hàm load thông tin account đang chọn
+        /// hàm load thông tin tất cả các tài khoản nhân viên
         /// </summary>
         public void loadAllAccount()
         {
@@ -184,15 +185,8 @@ namespace DogManage_HCMC
         /// <param name="b"></param>
         void SetAllControlReadOnlyOnGrboxPSI(bool b)
         {
-            tbAddress.ReadOnly =
-            tbEmail.ReadOnly =
-            tbPhoneNum.ReadOnly =
-            tbBirthDay.ReadOnly =
-            tbName.ReadOnly = b;
-            tbDateJoin.ReadOnly = b;
-            tbIDcardNum.ReadOnly = b;
-            pnGender.Enabled = !b;
-
+            dateTimePicker3.Enabled = !b;
+            tbBankNum.ReadOnly = b;
 
         }
         /// <summary>
@@ -201,8 +195,6 @@ namespace DogManage_HCMC
         /// <param name="b"></param>
         void SetAllControlReadOnlyOnGrboxSalary(bool b)
         {
-
-            tbMedicalCode.ReadOnly =
             tbBasicSalary.ReadOnly =
             nmrudfringe.ReadOnly = b;
         }
@@ -219,10 +211,6 @@ namespace DogManage_HCMC
             return t.ToString();
         }
 
-        private void dtgvAllAcc_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-
-        }
 
         private void btnViewListAcc_Click(object sender, EventArgs e)
         {
@@ -275,7 +263,7 @@ namespace DogManage_HCMC
             }
             try
             {
-                tbDateJoin.Text = s.DateJoin.ToShortDateString();
+                dateTimePicker3.Value = s.DateJoin;
                 tbBankNum.Text = s.BankAccountNum.ToString();
                 tbBasicSalary.Text = s.Salary.ToString();
                 tbMedicalCode.Text = s.MedicalCode.ToString();
@@ -283,7 +271,7 @@ namespace DogManage_HCMC
                 tbUserName.Text = s.Account.UserName;
                 pictureBox1.Image = byteArrToImage(s.Image);
 
-                if(s.Account.Type == typeAccount.Accountant)
+                if (s.Account.Type == typeAccount.Accountant)
                 {
                     cbTypeAcc.SelectedItem = cbTypeAcc.Items[0];
                 }
@@ -310,13 +298,16 @@ namespace DogManage_HCMC
         /// <param name="e"></param>
         private void dtgvAllUser_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            tbDateJoin.Text = string.Empty;
+            isEdit = false;
+            pictureBox1.Image = null;
+            dateTimePicker3.Enabled = false;
+            dateTimePicker3.Text = string.Empty;
             tbBankNum.Text = string.Empty;
             tbBasicSalary.Text = string.Empty;
             tbMedicalCode.Text = string.Empty;
             nmrudfringe.Value = 0;
             tbUserName.Text = string.Empty;
-            cbTypeAcc.Text= string.Empty;
+            cbTypeAcc.Text = string.Empty;
             setAllControlBoxReadOnlyOnGrBox(true);
         }
 
@@ -339,14 +330,24 @@ namespace DogManage_HCMC
 
         private void button5_Click(object sender, EventArgs e)
         {
-            tbDateJoin.ReadOnly = false;
-            tbPhoneNum.ReadOnly = false;
+            if (tbUserName.Text == "")
+            {
+                MessageBox.Show("Không có thông tin đăng nhập để chỉnh sửa, nhấn xem đầy đủ và thử lại");
+                return;
+            }
+            dateTimePicker3.Enabled = true;
+            isEdit = true;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            tbAddress.ReadOnly = false;
+            if (tbUserName.Text == "")
+            {
+                MessageBox.Show("Không có thông tin đăng nhập để chỉnh sửa, nhấn xem đầy đủ và thử lại");
+                return;
+            }
             nmrudfringe.ReadOnly = false;
+            isEdit = true;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -355,20 +356,32 @@ namespace DogManage_HCMC
 
         private void button8_Click(object sender, EventArgs e)
         {
-            tbMedicalCode.ReadOnly = false;
-         
+            if (tbUserName.Text == "")
+            {
+                MessageBox.Show("Không có thông tin đăng nhập để chỉnh sửa, nhấn xem đầy đủ và thử lại");
+                return;
+            }
+            tbBankNum.ReadOnly = false;
+            isEdit = true;
+
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
+            if (tbUserName.Text == "")
+            {
+                MessageBox.Show("Không có thông tin đăng nhập để chỉnh sửa, nhấn xem đầy đủ và thử lại");
+                return;
+            }
             tbBasicSalary.ReadOnly = false;
+            isEdit = true;
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            if(tbUserName.Text == "" )
+            if (tbUserName.Text == "")
             {
-                MessageBox.Show("Không có thông tin đăng nhập để chỉnh sửa");
+                MessageBox.Show("Không có thông tin đăng nhập để chỉnh sửa, nhấn xem đầy đủ và thử lại");
                 return;
             }
             btnReserPassW.Enabled = true;
@@ -382,18 +395,24 @@ namespace DogManage_HCMC
         /// <param name="e"></param>
         private void btnEditAll_Click(object sender, EventArgs e)
         {
+            if (tbUserName.Text == "")
+            {
+                MessageBox.Show("Không có thông tin đăng nhập để chỉnh sửa, nhấn xem đầy đủ và thử lại");
+                return;
+            }
             setAllControlBoxReadOnlyOnGrBox(false);
+            isEdit = true;
         }
 
         private void btnReserPassW_Click(object sender, EventArgs e)
         {
-            if(tbUserName.Text.Length < 1)
+            if (tbUserName.Text.Length < 1)
             {
                 MessageBox.Show("Tên tài khoản không đúng!");
                 return;
             }
             bool _reset = AccountConnection.Inst.resetPassW(tbUserName.Text);
-            if(_reset)
+            if (_reset)
             {
                 MessageBox.Show("Reset mật khẩu thành công !", tbUserName.Text);
             }
@@ -411,34 +430,53 @@ namespace DogManage_HCMC
 
         private void btnChangTypeAcc_Click(object sender, EventArgs e)
         {
-            if(tbUserName.Text == _acc.UserName)
+     
+            if (tbUserName.Text == _acc.UserName)
             {
                 MessageBox.Show("Không thể thay đổi tài khoản của chính bạn");
                 return;
             }
-            if(MessageBox.Show(string.Format("Bạn muốn đổi tài khoản này thành loại {0}",cbTypeAcc.Text),string.Format("Tài khoản:[{0}]",tbUserName.Text), MessageBoxButtons.OKCancel) == DialogResult.OK)
+           
+            if (cbTypeAcc.Text == "")
             {
+                MessageBox.Show("Vui lòng chọn loại tài khoản !");
+                return;
+
+            }
+
+            //if(cbTypeAcc.SelectedText == s.Account.Type.ToString())
+            //{
+            //    MessageBox.Show("Hãy đổi loại tài khoản khác hiện tại !");
+            //    return;
+            //}
+            if (MessageBox.Show(string.Format("Bạn muốn đổi tài khoản này thành loại {0}", cbTypeAcc.Text), string.Format("Tài khoản:[{0}]", tbUserName.Text), MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+
                 if (AccountConnection.Inst.changTypeAccount(cbTypeAcc.SelectedIndex, tbUserName.Text))
                 {
-                    MessageBox.Show("Đổi thành công");
+                    MessageBox.Show("Đổi loại tài khoản thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Đổi loại tài khoản không thành công, vui lòng thử lại sau !");
                 }
             }
         }
 
         private void ctmnstripDTGV_Opening(object sender, CancelEventArgs e)
         {
-            if(dtgvAllUser.RowCount < 2)
+            if (dtgvAllUser.RowCount < 2)
             {
                 e.Cancel = true;
             }
-            
 
-            
+
+
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void tabpAccount_Click(object sender, EventArgs e)
@@ -450,11 +488,39 @@ namespace DogManage_HCMC
         {
             frmAddStaff frmA = new frmAddStaff();
             frmA.ShowDialog();
+            loadAllAccount();
         }
 
         private void cbTypeAcc_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEditAcc_Click(object sender, EventArgs e)
+        {
+            if (isEdit)
+            {
+                if (MessageBox.Show("Bạn muốn chỉnh sửa nhân viên: " + tbName.Text, "", MessageBoxButtons.OK) == DialogResult.OK)
+                {
+                    if (SoftWareUserConnection.Inst.managerUpdateForStaff(tbID.Text, tbBankNum.Text, tbBirthDay.Text, nmrudfringe.Value.ToString()))
+                    {
+                        MessageBox.Show("Chỉnh sửa thành công !");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chỉnh sửa thất bại, vui lòng thử lại sau !");
+                    }
+
+                }
+            }
+            else
+            {
+                if (tbUserName.Text == "")
+                {
+                    MessageBox.Show("Không có thông tin đăng nhập để chỉnh sửa, nhấn xem đầy đủ và thử lại");
+
+                }
+            }
         }
     }
 }

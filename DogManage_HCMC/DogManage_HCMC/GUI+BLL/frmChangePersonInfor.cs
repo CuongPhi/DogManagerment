@@ -20,6 +20,7 @@ namespace DogManage_HCMC.GUI_BLL
         //Form này có thuộc tính account để lưu tài khoản đang đăng nhập
         Account _acc = new Account();
         SoftWareUser user = null;
+        bool isSave = false;
         public frmChangePersonInfor(Account acc)
         {
             _acc = acc;
@@ -46,22 +47,18 @@ namespace DogManage_HCMC.GUI_BLL
         public void loadUser(SoftWareUser s)
         {
             tbAddress.Text = s.Info.Address;
-            tbBirthDay.Text = s.Info.BirthDay.ToShortDateString();
+
+            dateTimePicker1.Text = s.Info.BirthDay.ToShortDateString();
             tbEmail.Text = s.Info.EMail;
             tbIDCardNum.Text = s.Info.IdCardNumber.ToString();
             tbName.Text = s.Info.Name;
             tbPhoneNum.Text = s.Info.PhoneNum.ToString();
             tbID.Text = s.Info.IdPerson.ToString();
-            if (s.Info.Gender == false)
-            {
-                cbMale.Checked = true;
-            }
-            else
-            {
-                cbFeMale.Checked = true;
-            }
+
+            cbFeMale.Checked = s.Info.Gender;
+
             tbUserName.Text = s.Account.UserName;
-            //tbPass.Text = s.Account.PassWord;
+
             tbTypeAcc.Text = s.Account.Type.ToString();
 
             tbMedicalCode.Text = s.MedicalCode.ToString();
@@ -105,6 +102,7 @@ namespace DogManage_HCMC.GUI_BLL
 
         private void frmChangePersonInfor_Load(object sender, EventArgs e)
         {
+
             loadAllInfoAccount();
         }
 
@@ -123,8 +121,9 @@ namespace DogManage_HCMC.GUI_BLL
             pictureBox1.Image = Image.FromFile(fileName);
         }
 
-        public Image resizeImage(int newWidth, int newHeight, Image imgPhoto)        {
-          
+        public Image resizeImage(int newWidth, int newHeight, Image imgPhoto)
+        {
+
 
             int sourceWidth = imgPhoto.Width;
             int sourceHeight = imgPhoto.Height;
@@ -184,14 +183,146 @@ namespace DogManage_HCMC.GUI_BLL
         {
             if (user != null)
             {
+
                 MemoryStream str = new MemoryStream();
                 pictureBox1.Image.Save(str, ImageFormat.Jpeg);
-                
+
                 user.Image = str.ToArray();
                 if (SoftWareUserConnection.Inst.saveImage(user.Image, user.Info.IdPerson))
+                {
                     MessageBox.Show("Lưu ảnh đại diện thành công !!");
+                    isSave = true;
+                }
+
                 else
-                    MessageBox.Show("Lưu thất bại !");
+                {
+                    MessageBox.Show("Lưu ảnh thất bại, vui lòng thử lại sau !");
+                }
+            }
+        }
+
+        private void btnSave1_Click(object sender, EventArgs e)
+        {
+
+            if (PersonInfoConnection.Inst.updateName(StandardString(tbName.Text), tbID.Text))
+            {
+                MessageBox.Show("Lưu tên thành công !");
+                isSave = true;
+            }
+            else
+            {
+                MessageBox.Show("Lưu thất bại, vui lòng thử lại sau !");
+            }
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSave3_Click(object sender, EventArgs e)
+        {
+            if (SoftWareUserConnection.Inst.updateMedicalCode(tbMedicalCode.Text, tbID.Text))
+            {
+                MessageBox.Show("Lưu mã số BHYT thành công !");
+                isSave = true;
+            }
+            else
+            {
+                MessageBox.Show("Lưu thất bại, vui lòng thử lại sau !");
+            }
+        }
+
+        private void btnSave4_Click(object sender, EventArgs e)
+        {
+            string birthday = dateTimePicker1.Value.ToString("MM-dd-yyyy");
+            int gender = cbFeMale.Checked ? 1 : 0;
+
+            if (PersonInfoConnection.Inst.updatePSI(tbID.Text, tbPhoneNum.Text, tbIDCardNum.Text, StandardString(tbAddress.Text), tbEmail.Text, birthday, gender))
+            {
+                MessageBox.Show("Lưu thông tin cá nhân thành công !");
+                isSave = true;
+            }
+            else
+            {
+                MessageBox.Show("Lưu thất bại, vui lòng thử lại sau !");
+            }
+
+        }
+
+        private void tbAddress_TextChanged(object sender, EventArgs e)
+        {
+            if (tbAddress.Text.Length >= 22)
+            {
+                tbAddress.Multiline = true;
+            }
+            else
+            {
+                tbAddress.Multiline = false;
+            }
+        }
+
+        private void btnClearAll_Click(object sender, EventArgs e)
+        {
+            tbName.Text = "";
+            tbMedicalCode.Text = "";
+            tbEmail.Text = "";
+            tbPhoneNum.Text = "";
+            tbAddress.Text = "";
+            tbIDCardNum.Text = "";
+            cbFeMale.Checked = true;
+            dateTimePicker1.Value = DateTime.Now;
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            loadAllInfoAccount();
+        }
+
+        private void btnSaveAll_Click(object sender, EventArgs e)
+        {
+            btnSave1_Click(sender, e);
+            btnSaveImage_Click(sender, e);
+            btnSave3_Click(sender, e);
+            btnSave4_Click(sender, e);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+
+           
+
+        }
+        public string StandardString(string strInput)
+        {
+            string tmp = strInput;
+            try
+            {
+                strInput = strInput.Trim().ToLower();
+                while (strInput.Contains("  "))
+                    strInput = strInput.Replace("  ", " ");
+                string strResult = "";
+                string[] arrResult = strInput.Split(' ');
+                foreach (string item in arrResult)
+                    strResult += item.Substring(0, 1).ToUpper() + item.Substring(1) + " ";
+                return strResult.TrimEnd();
+            }
+            catch { return tmp; }
+        }
+
+        private void btnOut_Click(object sender, EventArgs e)
+        {
+            if (!isSave)
+            {
+                if (MessageBox.Show("Bạn chưa lưu lại thông tin, có muốn thoát ngay bây giờ không ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    this.Close();
+                }
+                else
+                {
+
+                }
             }
         }
     }

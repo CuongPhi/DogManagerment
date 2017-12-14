@@ -26,12 +26,13 @@ namespace DogManage_HCMC.DTO
         {
             try
             {
+
                 this.PhoneNum =r["PhoneNum"].ToString();
-                this.Address = StandardString(r["address"].ToString());
+                this.Address = (r["address"].ToString());
                 this.Gender = (bool)r["Gender"];
                 this.BirthDay = (DateTime)r["Birhday"];
                 this.IdPerson =r["IDperson"].ToString();
-                this.Name = StandardString(r["Name"].ToString());
+                this.Name = (r["Name"].ToString());
                 this.IdCardNumber = r["IDcardNum"].ToString();
                 this.EMail = r["Email"].ToString().Trim().ToLower();          
             }
@@ -40,17 +41,7 @@ namespace DogManage_HCMC.DTO
           
         }
      
-        public string StandardString(string strInput)
-        {
-            strInput = strInput.Trim().ToLower();
-            while (strInput.Contains("  "))
-                strInput = strInput.Replace("  ", " ");
-            string strResult = "";
-            string[] arrResult = strInput.Split(' ');
-            foreach (string item in arrResult)
-                strResult += item.Substring(0, 1).ToUpper() + item.Substring(1) + " ";
-            return strResult.TrimEnd();
-        }
+     
         public string Name { get => name; set => name = value; }
         public bool Gender { get => gender; set => gender = value; }
         public string Address { get => address; set => address = value; } 
