@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C37803BC-A1D2-4C89-839A-C43DF073943A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DogManage_HCMC</RootNamespace>
+    <AssemblyName>DogManage_HCMC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Dog_SC.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\AccountConnection.cs" />
+    <Compile Include="DAL\BillConnection.cs" />
+    <Compile Include="DAL\DataConnection.cs" />
+    <Compile Include="DAL\DogConnection.cs" />
+    <Compile Include="DAL\PersonInfoConnection.cs" />
+    <Compile Include="DAL\SoftWareUserConnection.cs" />
+    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\Dog.cs" />
+    <Compile Include="DTO\DogOwner.cs" />
+    <Compile Include="DTO\Person.cs" />
+    <Compile Include="DTO\PersonInfo.cs" />
+    <Compile Include="DTO\SoftWareUser.cs" />
+    <Compile Include="GUI+BLL\frmAccountant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI+BLL\frmAccountant.Designer.cs">
+      <DependentUpon>frmAccountant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI+BLL\frmAddDog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI+BLL\frmAddDog.Designer.cs">
+      <DependentUpon>frmAddDog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI+BLL\frmAddStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI+BLL\frmAddStaff.Designer.cs">
+      <DependentUpon>frmAddStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI+BLL\frmChangePassW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI+BLL\frmChangePassW.Designer.cs">
+      <DependentUpon>frmChangePassW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI+BLL\frmChangePersonInfor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI+BLL\frmChangePersonInfor.Designer.cs">
+      <DependentUpon>frmChangePersonInfor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI+BLL\frmEditDog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI+BLL\frmEditDog.Designer.cs">
+      <DependentUpon>frmEditDog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI+BLL\frmForgotPassW.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI+BLL\frmForgotPassW.Designer.cs">
+      <DependentUpon>frmForgotPassW.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI+BLL\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI+BLL\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI+BLL\frmIntro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI+BLL\frmIntro.Designer.cs">
+      <DependentUpon>frmIntro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI+BLL\frmManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI+BLL\frmManager.Designer.cs">
+      <DependentUpon>frmManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI+BLL\frmStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI+BLL\frmStaff.Designer.cs">
+      <DependentUpon>frmStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI+BLL\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI+BLL\frmAccountant.resx">
+      <DependentUpon>frmAccountant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI+BLL\frmAddDog.resx">
+      <DependentUpon>frmAddDog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI+BLL\frmAddStaff.resx">
+      <DependentUpon>frmAddStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI+BLL\frmChangePassW.resx">
+      <DependentUpon>frmChangePassW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI+BLL\frmChangePersonInfor.resx">
+      <DependentUpon>frmChangePersonInfor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI+BLL\frmEditDog.resx">
+      <DependentUpon>frmEditDog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI+BLL\frmForgotPassW.resx">
+      <DependentUpon>frmForgotPassW.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI+BLL\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI+BLL\frmIntro.resx">
+      <DependentUpon>frmIntro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI+BLL\frmManager.resx">
+      <DependentUpon>frmManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI+BLL\frmStaff.resx">
+      <DependentUpon>frmStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GUI+BLL\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dog_SC.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

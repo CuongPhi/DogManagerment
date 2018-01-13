@@ -11,7 +11,7 @@ namespace DogManage_HCMC.DAL
 {
     public class DataConnection
     {
-        string strconnection = "Data Source=.;Initial Catalog=DOG_MANAGEMENT_HCMC;Integrated Security=True";
+        string strconnection = @"Data Source=.\SQLSERVER;Initial Catalog=DOG_MANAGEMENT_HCMC;Integrated Security=True";
         private static DataConnection inst;
         private DataConnection() { }
         public static DataConnection Inst

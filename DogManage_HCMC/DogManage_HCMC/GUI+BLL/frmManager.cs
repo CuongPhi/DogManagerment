@@ -166,6 +166,7 @@ namespace DogManage_HCMC
             this.Text += _acc.UserName;
             loadAllAccount();
             setAllControlBoxReadOnlyOnGrBox(true);
+            thongKe();
         }
 
         /// <summary>
@@ -195,8 +196,8 @@ namespace DogManage_HCMC
         /// <param name="b"></param>
         void SetAllControlReadOnlyOnGrboxSalary(bool b)
         {
-            tbBasicSalary.ReadOnly =
-            nmrudfringe.ReadOnly = b;
+            tbBasicSalary.ReadOnly = b;
+            nmrudfringe.Enabled = !b;
         }
         /// <summary>
         /// set thuộc tính ReadOnly của các textbox groupbox Account trên UI bằng đối số truyền vào
@@ -339,6 +340,15 @@ namespace DogManage_HCMC
             isEdit = true;
         }
 
+        public bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
         private void button6_Click(object sender, EventArgs e)
         {
             if (tbUserName.Text == "")
@@ -346,10 +356,47 @@ namespace DogManage_HCMC
                 MessageBox.Show("Không có thông tin đăng nhập để chỉnh sửa, nhấn xem đầy đủ và thử lại");
                 return;
             }
-            nmrudfringe.ReadOnly = false;
+            nmrudfringe.Enabled = true;
             isEdit = true;
         }
+        bool isCorrectUpdate()
+        {
+            bool flag = true;
+            if (!IsNumber(tbPhoneNum.Text))
+            {
+                flag = false;
+                erP.SetError(tbPhoneNum, "Vui lòng nhập số !");
+            }
+            if (!IsNumber(tbBankNum.Text))
+            {
+                flag = false;
+                erP.SetError(tbPhoneNum, "Vui lòng nhập số !");
+            }
+            if (!IsNumber(tbBasicSalary.Text))
+            {
+                flag = false;
+                erP.SetError(tbPhoneNum, "Vui lòng nhập số !");
+            }
+            return flag;
+        }
+        bool ischangeUpdate()
+        {
+            bool flag = false;
+            if (tbPhoneNum.Text != s.Info.PhoneNum)
+            {
+                flag = true;
+            }
+            if (tbBasicSalary.Text != s.Salary.ToString())
+            {
+                flag = true;
+            }
+            if (tbBankNum.Text != s.BankAccountNum)
+            {
+                flag = true;
+            }
+            return flag;
 
+        }
         private void button7_Click(object sender, EventArgs e)
         {
         }
@@ -430,13 +477,13 @@ namespace DogManage_HCMC
 
         private void btnChangTypeAcc_Click(object sender, EventArgs e)
         {
-     
+
             if (tbUserName.Text == _acc.UserName)
             {
                 MessageBox.Show("Không thể thay đổi tài khoản của chính bạn");
                 return;
             }
-           
+
             if (cbTypeAcc.Text == "")
             {
                 MessageBox.Show("Vui lòng chọn loại tài khoản !");
@@ -498,8 +545,18 @@ namespace DogManage_HCMC
 
         private void btnEditAcc_Click(object sender, EventArgs e)
         {
+            if (!isCorrectUpdate())
+            {
+                MessageBox.Show("Vui lòng chỉnh sửa thông tin chính xác !");
+                return;
+            }
             if (isEdit)
             {
+                if (!ischangeUpdate())
+                {
+                    MessageBox.Show("Vui lòng thay đổi thông tin trước khi chỉnh sửa !");
+                    return;
+                }
                 if (MessageBox.Show("Bạn muốn chỉnh sửa nhân viên: " + tbName.Text, "", MessageBoxButtons.OK) == DialogResult.OK)
                 {
                     if (SoftWareUserConnection.Inst.managerUpdateForStaff(tbID.Text, tbBankNum.Text, tbBirthDay.Text, nmrudfringe.Value.ToString()))
@@ -513,14 +570,28 @@ namespace DogManage_HCMC
 
                 }
             }
+         
             else
             {
                 if (tbUserName.Text == "")
                 {
                     MessageBox.Show("Không có thông tin đăng nhập để chỉnh sửa, nhấn xem đầy đủ và thử lại");
-
+                    return;
                 }
+                MessageBox.Show("Chưa chỉnh sửa thông tin nào cả");
             }
+        }
+
+        private void tbFindUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        void thongKe()
+        {
+            string query = "select *from USERAPP";
+            dataGridView2.DataSource = DAL.DataConnection.Inst.ExcuteQuery(query);
+
+               
         }
     }
 }

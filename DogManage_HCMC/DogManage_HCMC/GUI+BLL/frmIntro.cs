@@ -53,9 +53,9 @@ namespace DogManage_HCMC
 
         private void trợGiúpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Nội dung giúp đỡ !");
+            MessageBox.Show("Khi bạn đăng");
         }
-
+        
         private void btnExit_Click(object sender, EventArgs e)
         {
 

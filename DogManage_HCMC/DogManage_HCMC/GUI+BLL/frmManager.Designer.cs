@@ -112,6 +112,7 @@
             this.ctmntripSearch = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tìmTheoMãToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.erP = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabp.SuspendLayout();
             this.tabpAccount.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -136,6 +137,7 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.ctmntripSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erP)).BeginInit();
             this.SuspendLayout();
             // 
             // tabp
@@ -269,9 +271,9 @@
             // 
             this.cbTypeAcc.FormattingEnabled = true;
             this.cbTypeAcc.Items.AddRange(new object[] {
-            "Accountant",
-            "Manager",
-            "Starff"});
+            "Kế Toán",
+            "Quản lý",
+            "Nhân Viên"});
             this.cbTypeAcc.Location = new System.Drawing.Point(109, 51);
             this.cbTypeAcc.Name = "cbTypeAcc";
             this.cbTypeAcc.Size = new System.Drawing.Size(95, 21);
@@ -293,7 +295,7 @@
             // 
             // btnChangTypeAcc
             // 
-            this.btnChangTypeAcc.Location = new System.Drawing.Point(279, 20);
+            this.btnChangTypeAcc.Location = new System.Drawing.Point(295, 20);
             this.btnChangTypeAcc.Name = "btnChangTypeAcc";
             this.btnChangTypeAcc.Size = new System.Drawing.Size(62, 49);
             this.btnChangTypeAcc.TabIndex = 21;
@@ -304,7 +306,7 @@
             // 
             // btnReserPassW
             // 
-            this.btnReserPassW.Location = new System.Drawing.Point(211, 20);
+            this.btnReserPassW.Location = new System.Drawing.Point(227, 20);
             this.btnReserPassW.Name = "btnReserPassW";
             this.btnReserPassW.Size = new System.Drawing.Size(64, 49);
             this.btnReserPassW.TabIndex = 20;
@@ -505,6 +507,7 @@
             // 
             // nmrudfringe
             // 
+            this.nmrudfringe.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
             this.nmrudfringe.Location = new System.Drawing.Point(316, 125);
             this.nmrudfringe.Name = "nmrudfringe";
             this.nmrudfringe.Size = new System.Drawing.Size(40, 20);
@@ -892,7 +895,6 @@
             this.grbListStaff.Size = new System.Drawing.Size(428, 351);
             this.grbListStaff.TabIndex = 2;
             this.grbListStaff.TabStop = false;
-            this.grbListStaff.Text = "Danh sách nhân viên công ty";
             // 
             // dataGridView2
             // 
@@ -952,6 +954,7 @@
             this.tbFindUser.TabIndex = 3;
             this.tbFindUser.Text = "Tìm kiếm";
             this.tbFindUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbFindUser.TextChanged += new System.EventHandler(this.tbFindUser_TextChanged);
             // 
             // btnReturn
             // 
@@ -985,6 +988,10 @@
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
+            // 
+            // erP
+            // 
+            this.erP.ContainerControl = this;
             // 
             // frmManager
             // 
@@ -1031,6 +1038,7 @@
             this.panel3.PerformLayout();
             this.ctmntripSearch.ResumeLayout(false);
             this.ctmntripSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erP)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1119,5 +1127,6 @@
         private System.Windows.Forms.ToolStripMenuItem tìmTheoSốĐTToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.ErrorProvider erP;
     }
 }

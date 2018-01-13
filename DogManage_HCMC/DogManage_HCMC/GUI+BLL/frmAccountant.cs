@@ -20,6 +20,8 @@ namespace DogManage_HCMC.GUI_BLL
         {
             InitializeComponent();
             loadBill();
+            thongKe();
+            tinhThu();
         }
 
         void loadBill()
@@ -93,6 +95,24 @@ namespace DogManage_HCMC.GUI_BLL
                     }
                 }
             }
+        }
+
+        private void dtgvStatis_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        void thongKe()
+        {
+            dtgvStatis.DataSource = DAL.DogConnection.Inst.listOfDestroyedDog();
+
+        }
+      void tinhThu()
+        {
+            dataGridView1.DataSource = DAL.DogConnection.Inst.moneyForDog();
+        }
+        private void frmAccountant_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

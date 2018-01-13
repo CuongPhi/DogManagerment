@@ -38,8 +38,8 @@
             this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiTTCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mntrfrmIntro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,6 +136,12 @@
             this.đổiTTCáNhânToolStripMenuItem.Text = "Đổi TT Cá nhân";
             this.đổiTTCáNhânToolStripMenuItem.Click += new System.EventHandler(this.đổiTTCáNhânToolStripMenuItem_Click);
             // 
+            // thôngTinToolStripMenuItem
+            // 
+            this.thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
+            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.thôngTinToolStripMenuItem.Text = "Thông tin";
+            // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("trợGiúpToolStripMenuItem.Image")));
@@ -144,12 +150,6 @@
             this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
             this.trợGiúpToolStripMenuItem.Click += new System.EventHandler(this.trợGiúpToolStripMenuItem_Click);
-            // 
-            // thôngTinToolStripMenuItem
-            // 
-            this.thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
-            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.thôngTinToolStripMenuItem.Text = "Thông tin";
             // 
             // frmIntro
             // 

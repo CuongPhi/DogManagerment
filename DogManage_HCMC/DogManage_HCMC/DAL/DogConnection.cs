@@ -48,6 +48,16 @@ namespace DogManage_HCMC.DAL
             }
             return null;
         }
+       public DataTable listOfDestroyedDog()
+        {
+            DataTable dt = DataConnection.Inst.ExcuteQuery("select *from DOG WHERE DATEDIFF(HOUR,DATEOUT, GETDATE()) > 0");
+            return dt;
+        }
+        public DataTable moneyForDog()
+        {
+            DataTable dt = DataConnection.Inst.ExcuteQuery("SELECT IDDOG as N'ID', FOODMONEY AS N'Tiền thức ăn' FROM DOG");
+            return dt;// lam di t di tam
+        }
         public bool addDog(Dog dog)
         {
             string sqlQue = "INSERT dbo.DOG VALUES ({0},{1}, '{2}', '{3}',  {4},  {5})";

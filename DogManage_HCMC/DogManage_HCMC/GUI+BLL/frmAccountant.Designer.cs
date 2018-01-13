@@ -42,6 +42,16 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dtgvBill = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker7 = new System.Windows.Forms.DateTimePicker();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -51,6 +61,13 @@
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -84,7 +101,7 @@
             this.groupBox2.Size = new System.Drawing.Size(484, 408);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thu chi";
+            this.groupBox2.Text = "Danh sách chó bi tiêu hủy";
             // 
             // panel2
             // 
@@ -119,6 +136,7 @@
             this.dtgvStatis.Name = "dtgvStatis";
             this.dtgvStatis.Size = new System.Drawing.Size(478, 353);
             this.dtgvStatis.TabIndex = 1;
+            this.dtgvStatis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvStatis_CellContentClick);
             // 
             // groupBox1
             // 
@@ -168,13 +186,99 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.panel4);
+            this.tabPage2.Controls.Add(this.groupBox4);
+            this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(879, 420);
+            this.tabPage2.Size = new System.Drawing.Size(985, 420);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Thống kê";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.dateTimePicker8);
+            this.panel4.Controls.Add(this.dateTimePicker7);
+            this.panel4.Location = new System.Drawing.Point(510, 25);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(448, 31);
+            this.panel4.TabIndex = 1;
+            // 
+            // dateTimePicker8
+            // 
+            this.dateTimePicker8.Location = new System.Drawing.Point(245, 8);
+            this.dateTimePicker8.Name = "dateTimePicker8";
+            this.dateTimePicker8.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker8.TabIndex = 2;
+            // 
+            // dateTimePicker7
+            // 
+            this.dateTimePicker7.Location = new System.Drawing.Point(3, 8);
+            this.dateTimePicker7.Name = "dateTimePicker7";
+            this.dateTimePicker7.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker7.TabIndex = 1;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dataGridView2);
+            this.groupBox4.Location = new System.Drawing.Point(479, 6);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(500, 411);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Bảng lương";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 56);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(488, 352);
+            this.dataGridView2.TabIndex = 2;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.panel3);
+            this.groupBox3.Location = new System.Drawing.Point(6, 6);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(467, 411);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Chi phí thu";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 56);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(455, 352);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dateTimePicker6);
+            this.panel3.Controls.Add(this.dateTimePicker5);
+            this.panel3.Location = new System.Drawing.Point(6, 19);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(455, 31);
+            this.panel3.TabIndex = 0;
+            // 
+            // dateTimePicker6
+            // 
+            this.dateTimePicker6.Location = new System.Drawing.Point(252, 8);
+            this.dateTimePicker6.Name = "dateTimePicker6";
+            this.dateTimePicker6.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker6.TabIndex = 1;
+            // 
+            // dateTimePicker5
+            // 
+            this.dateTimePicker5.Location = new System.Drawing.Point(0, 8);
+            this.dateTimePicker5.Name = "dateTimePicker5";
+            this.dateTimePicker5.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker5.TabIndex = 0;
             // 
             // label1
             // 
@@ -198,6 +302,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAccountant";
             this.Text = "Chức năng-Kế toán";
+            this.Load += new System.EventHandler(this.frmAccountant_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -206,6 +311,13 @@
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +339,15 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DataGridView dtgvBill;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker8;
+        private System.Windows.Forms.DateTimePicker dateTimePicker7;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker5;
     }
 }
